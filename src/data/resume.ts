@@ -39,6 +39,8 @@ export type SkillRating = {
 
 export type ResumeData = {
   name: string
+  firstName: string
+  lastName: string
   tagline: string
   title: string
   location: string
@@ -59,7 +61,9 @@ export type ResumeData = {
 }
 
 export const resume: ResumeData = {
-  name: 'Your Name',
+  name: 'Jan Edward de Nicolas',
+  firstName: 'Jan Edward',
+  lastName: 'de Nicolas',
   tagline: 'Software Engineer building thoughtful tools for the web.',
   title: 'Software Engineer',
   location: 'City, Country',

@@ -34,9 +34,7 @@ function PhotoCard({ photo, name }: { photo?: string; name: string }) {
 }
 
 export function Hero({ data }: { data: ResumeData }) {
-  const { name, tagline, summary, location, contact, photo } = data
-  const [first, ...rest] = name.split(' ')
-  const last = rest.join(' ')
+  const { name, firstName, lastName, tagline, summary, location, contact, photo } = data
 
   return (
     <section id="top" className="hero">
@@ -48,11 +46,11 @@ export function Hero({ data }: { data: ResumeData }) {
           </div>
 
           <h1 className="hero__name">
-            {first}
-            {last && (
+            {firstName}
+            {lastName && (
               <>
                 <br />
-                <span className="hero__name-accent">{last}.</span>
+                <span className="hero__name-accent">{lastName}.</span>
               </>
             )}
           </h1>
