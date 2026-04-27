@@ -1,16 +1,32 @@
-# React + Vite
+# project_profile
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal tech resume site built with Vite + React + TypeScript, deployable to Vercel.
 
-Currently, two official plugins are available:
+## Develop
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Open http://localhost:5173.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Build
 
-## Expanding the ESLint configuration
+```bash
+npm run build
+npm run preview
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Edit your content
+
+All resume content lives in [`src/data/resume.ts`](src/data/resume.ts) — name, contact, summary, skills, experience, projects, and education. The components render whatever is in that file, so you only need to edit one place.
+
+## Deploy to Vercel
+
+Vercel auto-detects Vite. Either:
+
+- Push this repo to GitHub and import it at https://vercel.com/new, or
+- Run `npx vercel` from the project root.
+
+No `vercel.json` is required. Vercel uses `npm run build` and serves `dist/`.
