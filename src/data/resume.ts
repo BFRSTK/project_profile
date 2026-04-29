@@ -77,17 +77,16 @@ export const resume: ResumeData = {
     { label: 'Coffees per day', value: '∞' },
   ],
   contact: {
-    email: 'you@example.com',
-    github: 'https://github.com/yourhandle',
+    email: 'edwarddenicolas@gmail.com',
     linkedin: 'https://linkedin.com/in/yourhandle',
-    website: 'https://yourdomain.dev',
+    website: 'https://www.frostarcanum.com',
   },
   skillsSummary: [
-    { name: 'Frontend Development', level: 5 },
-    { name: 'Backend Development', level: 4 },
-    { name: 'System Design', level: 4 },
-    { name: 'DevOps & Infrastructure', level: 3 },
-    { name: 'Technical Leadership', level: 3 },
+    { name: 'Coding', level: 4 },
+    { name: 'Solution Design', level: 5 },
+    { name: 'Team Management', level: 5 },
+    { name: 'Cloud Operations', level: 4 },
+    { name: 'SDLC Practices', level: 5 },
   ],
   skills: [
     {

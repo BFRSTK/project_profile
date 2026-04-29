@@ -50,7 +50,7 @@ export function Hero({ data }: { data: ResumeData }) {
             {lastName && (
               <>
                 <br />
-                <span className="hero__name-accent">{lastName}.</span>
+                <span className="hero__name-accent">{lastName}</span>
               </>
             )}
           </h1>
