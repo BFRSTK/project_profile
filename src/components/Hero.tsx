@@ -7,7 +7,7 @@ function PhotoCard({ photo, name }: { photo?: string; name: string }) {
     .split(' ')
     .map((p) => p[0])
     .join('')
-    .slice(0, 2)
+    .slice(0, 3)
     .toUpperCase()
 
   const showFallback = !photo || imgError
