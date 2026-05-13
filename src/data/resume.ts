@@ -70,7 +70,7 @@ export const resume: ResumeData = {
   available: true,
   photo: '/photo.jpg',
   summary:
-    "With 8 years in software engineering and 5 years of specialized DevOps experience, I bring a rare combination of full-stack technical depth and operational excellence — spanning everything from front-end interfaces to the pipelines and infrastructure that power them. I have a proven track record of designing and implementing CI/CD systems, driving automation initiatives, and ensuring system reliability at scale, all grounded in a strong Computer Engineering foundation in C/C++ and Java. Beyond the technical, I've built and mentored high-performing engineering teams across diverse roles and career levels, earning a reputation as a fast-moving, analytical problem-solver who delivers with clarity and composure",
+    "With 8 years in software engineering and 5 years of specialized DevOps experience, I bring a rare combination of full-stack technical depth and operational excellence — spanning everything from front-end interfaces to the pipelines and infrastructure that power them. I have a proven track record of designing and implementing CI/CD systems, driving automation initiatives, and ensuring system reliability at scale, all grounded in a strong Computer Engineering foundation in C/C++ and Java. Beyond the technical, I've built and mentored high-performing engineering teams across diverse roles and career levels, earning a reputation as a fast-moving, analytical problem-solver who delivers with clarity and composure.",
   stats: [
     { label: 'Years in Software Engineering', value: '8' },
     { label: 'Years in DevOps', value: '5' },
