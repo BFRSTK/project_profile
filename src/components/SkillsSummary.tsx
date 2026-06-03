@@ -22,7 +22,7 @@ export function SkillsSummary({ items }: { items: SkillRating[] }) {
   const ref = useReveal<HTMLDivElement>()
   return (
     <section id="skills-summary" className="section">
-      <SectionHead num="02" title="Skills Summary" />
+      <SectionHead num="03" title="Skills Summary" />
       <div className="skills-summary reveal" ref={ref}>
         {items.map((item) => (
           <div className="skills-summary__row" key={item.name}>

@@ -10,7 +10,7 @@ export function Education({
   const ref = useReveal<HTMLDivElement>()
   return (
     <section id="education" className="section">
-      <SectionHead num="05" title="Education" />
+      <SectionHead num="06" title="Education" />
       <div className="education__list reveal" ref={ref}>
         {education.map((e) => (
           <div className="education__item" key={`${e.school}-${e.start}`}>
