@@ -37,6 +37,12 @@ export type SkillRating = {
   level: number
 }
 
+export type BuiltItem = {
+  label: string
+  icon: 'mvc' | 'microservices' | 'cicd' | 'testsuites' | 'javalibs' | 'helmcharts'
+  color: string
+}
+
 export type ResumeData = {
   name: string
   firstName: string
@@ -55,6 +61,7 @@ export type ResumeData = {
     website?: string
   }
   skillsSummary: SkillRating[]
+  whatIBuilt: BuiltItem[]
   skills: { category: string; items: string[] }[]
   experience: Experience[]
   education: Education[]
@@ -87,6 +94,14 @@ export const resume: ResumeData = {
     { name: 'Team Management', level: 5 },
     { name: 'Cloud Operations', level: 4 },
     { name: 'SDLC Practices', level: 5 },
+  ],
+  whatIBuilt: [
+    { label: 'MVC Applications', icon: 'mvc', color: '#60a5fa' },
+    { label: 'Microservices', icon: 'microservices', color: '#a78bfa' },
+    { label: 'CI/CD Pipelines', icon: 'cicd', color: '#34d399' },
+    { label: 'Application Test Suites', icon: 'testsuites', color: '#f59e0b' },
+    { label: 'Java Libraries', icon: 'javalibs', color: '#f87171' },
+    { label: 'Helm Charts', icon: 'helmcharts', color: '#2dd4bf' },
   ],
   skills: [
     {

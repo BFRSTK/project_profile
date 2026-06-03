@@ -6,18 +6,16 @@ export function Skills({ skills }: { skills: ResumeData['skills'] }) {
   const ref = useReveal<HTMLDivElement>()
   return (
     <section id="skills" className="section">
-      <SectionHead num="03" title="Toolkit" />
+      <SectionHead num="04" title="Toolkit" />
       <div className="skills__grid reveal" ref={ref}>
         {skills.map((group) => (
           <div className="skill-group" key={group.category}>
             <h3>{group.category}</h3>
-            <div className="skill-tags">
+            <ul className="skill-list">
               {group.items.map((item) => (
-                <span className="tag" key={item}>
-                  {item}
-                </span>
+                <li className="skill-list__item" key={item}>{item}</li>
               ))}
-            </div>
+            </ul>
           </div>
         ))}
       </div>

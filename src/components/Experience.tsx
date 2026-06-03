@@ -10,7 +10,7 @@ export function Experience({
   const ref = useReveal<HTMLDivElement>()
   return (
     <section id="experience" className="section">
-      <SectionHead num="04" title="Experience" />
+      <SectionHead num="05" title="Experience" />
       <div className="experience__list reveal" ref={ref}>
         {experience.map((job) => {
           const current = job.end.toLowerCase() === 'present'

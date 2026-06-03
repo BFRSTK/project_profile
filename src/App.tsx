@@ -4,6 +4,7 @@ import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
 import { SkillsSummary } from './components/SkillsSummary'
+import { WhatIBuilt } from './components/WhatIBuilt'
 import { Skills } from './components/Skills'
 import { Experience } from './components/Experience'
 import { Education } from './components/Education'
@@ -16,6 +17,7 @@ export default function App() {
       <main className="app">
         <Hero data={resume} />
         <About summary={resume.summary} stats={resume.stats} />
+        <WhatIBuilt items={resume.whatIBuilt} />
         <SkillsSummary items={resume.skillsSummary} />
         <Skills skills={resume.skills} />
         <Experience experience={resume.experience} />
