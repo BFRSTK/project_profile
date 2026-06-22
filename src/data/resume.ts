@@ -86,7 +86,7 @@ export const resume: ResumeData = {
   contact: {
     email: 'edwarddenicolas@gmail.com',
     linkedin: 'https://www.linkedin.com/in/jan-edward-de-nicolas/',
-    website: 'https://www.frostarcanum.com',
+    website: 'https://www.rimebound.com',
   },
   skillsSummary: [
     { name: 'Coding', level: 4 },
