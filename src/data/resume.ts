@@ -150,7 +150,7 @@ export const resume: ResumeData = {
       code: 'MSVC',
       where: ['ACN-AU'],
       detail: 'Contributed to large-scale modernization at a major Australian bank, transitioning monolithic systems to a microservices architecture.',
-      tools: ['Java', 'Spring', 'SQL', 'Gradle', 'Node'],
+      tools: ['Java', 'Spring', 'SQL', 'Gradle', 'Node', 'Git'],
     },
     {
       label: 'Java Libraries',
@@ -158,7 +158,7 @@ export const resume: ResumeData = {
       code: 'JLIB',
       where: ['ACN-AU'],
       detail: 'Developed standardized Java bootstrapping frameworks and coding patterns, improving consistency, maintainability, and developer onboarding efficiency.',
-      tools: ['Java', 'Maven', 'Gradle', 'Node'],
+      tools: ['Java', 'Maven', 'Gradle', 'Node', 'Git'],
     },
     {
       label: 'Application Test Suites',
@@ -166,7 +166,7 @@ export const resume: ResumeData = {
       code: 'TEST',
       where: ['NAB', 'ACN-PH'],
       detail: 'Developed AI-assisted test case applications adopted organization-wide, increasing test coverage and reducing manual testing effort.',
-      tools: ['JUnit', 'Selenium', 'Jasmine'],
+      tools: ['JUnit', 'Selenium', 'Jasmine', 'Git', 'Cursor'],
     },
     {
       label: 'MVC Applications',

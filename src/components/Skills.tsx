@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import type { ResumeData } from '../data/resume'
 import { Section } from './Section'
 import { ToolList, useSkillLink } from './SkillLink'
@@ -68,12 +69,13 @@ export function Skills({
           <h3 className="subhead">Core strengths</h3>
           <ul className="ratings">
             {ratings.map((r) => (
-              <li key={r.name} className="ratings__row">
-                <span className="ratings__name">{r.name}</span>
+              <li key={r.name} className={`rating${r.level === SCALE ? ' rating--top' : ''}`}>
+                <p className="rating__value" aria-hidden="true">
+                  {r.level}
+                  <span>/{SCALE}</span>
+                </p>
                 <Meter level={r.level} />
-                <span className="ratings__value">
-                  {r.level}/{SCALE}
-                </span>
+                <h4 className="rating__name">{r.name}</h4>
               </li>
             ))}
           </ul>
@@ -85,7 +87,12 @@ export function Skills({
           </div>
           <dl className="toolkit">
             {skills.map((group) => (
-              <div key={group.category} className="toolkit__row">
+              <div
+                key={group.category}
+                className="toolkit__row"
+                // Rows that must wrap split into two even lines rather than leave one chip alone
+                style={{ '--per': group.items.length >= 5 ? Math.ceil(group.items.length / 2) : group.items.length } as CSSProperties}
+              >
                 <dt>{group.category}</dt>
                 <dd>
                   <ToolList tools={group.items} label={group.category} />
