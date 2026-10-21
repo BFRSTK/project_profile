@@ -25,12 +25,16 @@ function Photo({ photo, name }: { photo?: string; name: string }) {
 }
 
 export function Hero({ data }: { data: ResumeData }) {
-  const { name, title, tagline, location, contact, photo, available, years } = data
+  const { name, firstName, lastName, title, tagline, location, contact, photo, available, years } = data
 
   return (
     <section id="top" className="hero">
-      <div className="hero__text">
-        <h1 className="hero__name">{name}</h1>
+      <Photo photo={photo} name={name} />
+      <div className="hero__inner">
+        <div className="hero__text">
+        <h1 className="hero__name">
+          {firstName} <span className="hero__surname">{lastName}</span>
+        </h1>
         <p className="hero__title">
           <span className="nowrap">{title}</span>{' '}
           <span className="hero__sep" aria-hidden="true">
@@ -71,8 +75,8 @@ export function Hero({ data }: { data: ResumeData }) {
           ))}
           , with <strong>{years.mentoring}</strong> of those years mentoring engineering teams.
         </p>
+        </div>
       </div>
-      <Photo photo={photo} name={name} />
     </section>
   )
 }

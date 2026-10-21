@@ -19,14 +19,16 @@ export default function App() {
       </a>
       <Nav name={resume.name} email={resume.contact.email} />
       <SkillLinkProvider data={resume}>
-        <main className="app">
+        <main>
           <Hero data={resume} />
-          <About summary={resume.summary} />
-          <Skills ratings={resume.skillsSummary} skills={resume.skills} />
-          <WhatIBuilt items={resume.whatIBuilt} experience={resume.experience} />
-          <Experience experience={resume.experience} />
-          <Education education={resume.education} />
-          <Contact contact={resume.contact} />
+          <div className="app">
+            <About summary={resume.summary} />
+            <Skills ratings={resume.skillsSummary} skills={resume.skills} />
+            <WhatIBuilt items={resume.whatIBuilt} experience={resume.experience} />
+            <Experience experience={resume.experience} />
+            <Education education={resume.education} />
+            <Contact contact={resume.contact} />
+          </div>
         </main>
       </SkillLinkProvider>
       <footer className="footer">
