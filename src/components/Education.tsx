@@ -1,30 +1,25 @@
 import type { ResumeData } from '../data/resume'
-import { SectionHead } from './SectionHead'
-import { useReveal } from '../hooks/useReveal'
+import { Section } from './Section'
 
-export function Education({
-  education,
-}: {
-  education: ResumeData['education']
-}) {
-  const ref = useReveal<HTMLDivElement>()
+export function Education({ education }: { education: ResumeData['education'] }) {
   return (
-    <section id="education" className="section">
-      <SectionHead num="06" title="Education" />
-      <div className="education__list reveal" ref={ref}>
+    <Section id="education" title="Education">
+      <div className="roles">
         {education.map((e) => (
-          <div className="education__item" key={`${e.school}-${e.start}`}>
-            <div className="education__dates">
-              {e.start} — {e.end}
+          <article className="role" key={e.code}>
+            <p className="role__dates">
+              <time>{e.start}</time> – <time>{e.end}</time>
+            </p>
+            <div className="role__body">
+              <h3 className="role__title">{e.degree}</h3>
+              <p className="role__company">
+                {e.school}
+                {e.detail && <span className="role__location"> · {e.detail}</span>}
+              </p>
             </div>
-            <div>
-              <div className="education__school">{e.school}</div>
-              <div className="education__degree">{e.degree}</div>
-              {e.detail && <div className="education__detail">{e.detail}</div>}
-            </div>
-          </div>
+          </article>
         ))}
       </div>
-    </section>
+    </Section>
   )
 }

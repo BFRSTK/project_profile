@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;width:1440px;height:900px;overflow:hidden;background:#8e9399;font-family:"Arial Narrow",Arial,sans-serif}
+.board{position:absolute;inset:40px;background:#111214;padding:36px;border-radius:6px}
+.row{display:flex;gap:6px;margin-bottom:14px}
+.c{width:52px;height:74px;background:#1d1e21;color:#f4f4f2;font-size:50px;font-weight:700;display:flex;align-items:center;justify-content:center;border-bottom:2px solid #000}
+.hd{color:#f2a93b;font:700 24px Arial;letter-spacing:.2em;margin:18px 0 12px}
+.lit .c{background:#1d6fe0}
+</style></head><body><div class="board" id="b"></div>
+<script>
+const b=document.getElementById('b');const rows=[['JAN EDWARD DE NICOLAS',0],['DEVOPS TECH LEAD  MEL',0],['#',1],['2021 NAB      DEVOPS LEAD',0],['2016 ACN AU   APP DEV SPEC',0],['2012 ACN PH   SNR SW ENG',0],['#',1],['NOW BOARDING  EMAIL JAN',2]];
+rows.forEach(([t,k])=>{if(k==1){const h=document.createElement('div');h.className='hd';h.textContent='DEPARTURES   YEAR   CARRIER   ROLE';b.appendChild(h);return}const r=document.createElement('div');r.className='row'+(k==2?' lit':'');for(let i=0;i<24;i++){const c=document.createElement('div');c.className='c';c.textContent=(t[i]||' ');r.appendChild(c)}b.appendChild(r)});
+</script></body></html>

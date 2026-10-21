@@ -1,0 +1,598 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T08:26:48.839665+00:00",
+  "title": "Design System: Jan Edward de Nicolas",
+  "extensions": {
+    "colorMeta": {
+      "slate-ground": {
+        "role": "neutral",
+        "displayName": "Slate Ground",
+        "canonical": "#0b1120",
+        "tonalRamp": [
+          "oklch(15% 0.032 266.6)",
+          "oklch(26% 0.032 266.6)",
+          "oklch(38% 0.032 266.6)",
+          "oklch(50% 0.032 266.6)",
+          "oklch(62% 0.032 266.6)",
+          "oklch(74% 0.032 266.6)",
+          "oklch(85% 0.032 266.6)",
+          "oklch(95% 0.032 266.6)"
+        ],
+        "purpose": "Page and nav background, dark theme."
+      },
+      "slate-surface": {
+        "role": "neutral",
+        "displayName": "Slate Surface",
+        "canonical": "#111a2e",
+        "tonalRamp": [
+          "oklch(15% 0.042 264.8)",
+          "oklch(26% 0.042 264.8)",
+          "oklch(38% 0.042 264.8)",
+          "oklch(50% 0.042 264.8)",
+          "oklch(62% 0.042 264.8)",
+          "oklch(74% 0.042 264.8)",
+          "oklch(85% 0.042 264.8)",
+          "oklch(95% 0.042 264.8)"
+        ],
+        "purpose": "The single raised tone: chips, photo backing, hover fills."
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#1e293d",
+        "tonalRamp": [
+          "oklch(15% 0.040 261.9)",
+          "oklch(26% 0.040 261.9)",
+          "oklch(38% 0.040 261.9)",
+          "oklch(50% 0.040 261.9)",
+          "oklch(62% 0.040 261.9)",
+          "oklch(74% 0.040 261.9)",
+          "oklch(85% 0.040 261.9)",
+          "oklch(95% 0.040 261.9)"
+        ],
+        "purpose": "Row dividers, section rules, chip and photo borders."
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "#2c3a54",
+        "tonalRamp": [
+          "oklch(15% 0.049 262.3)",
+          "oklch(26% 0.049 262.3)",
+          "oklch(38% 0.049 262.3)",
+          "oklch(50% 0.049 262.3)",
+          "oklch(62% 0.049 262.3)",
+          "oklch(74% 0.049 262.3)",
+          "oklch(85% 0.049 262.3)",
+          "oklch(95% 0.049 262.3)"
+        ],
+        "purpose": "Control borders, empty meter segments, separators, resting underlines."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#e6eaf1",
+        "tonalRamp": [
+          "oklch(15% 0.010 261.8)",
+          "oklch(26% 0.010 261.8)",
+          "oklch(38% 0.010 261.8)",
+          "oklch(50% 0.010 261.8)",
+          "oklch(62% 0.010 261.8)",
+          "oklch(74% 0.010 261.8)",
+          "oklch(85% 0.010 261.8)",
+          "oklch(95% 0.010 261.8)"
+        ],
+        "purpose": "Headings, names, role titles."
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "#c2cad7",
+        "tonalRamp": [
+          "oklch(15% 0.020 260.2)",
+          "oklch(26% 0.020 260.2)",
+          "oklch(38% 0.020 260.2)",
+          "oklch(50% 0.020 260.2)",
+          "oklch(62% 0.020 260.2)",
+          "oklch(74% 0.020 260.2)",
+          "oklch(85% 0.020 260.2)",
+          "oklch(95% 0.020 260.2)"
+        ],
+        "purpose": "Body copy, bullets, chip text."
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "#8c98ad",
+        "tonalRamp": [
+          "oklch(15% 0.034 261.7)",
+          "oklch(26% 0.034 261.7)",
+          "oklch(38% 0.034 261.7)",
+          "oklch(50% 0.034 261.7)",
+          "oklch(62% 0.034 261.7)",
+          "oklch(74% 0.034 261.7)",
+          "oklch(85% 0.034 261.7)",
+          "oklch(95% 0.034 261.7)"
+        ],
+        "purpose": "Nav at rest, dates, subheads, metadata."
+      },
+      "signal-blue": {
+        "role": "primary",
+        "displayName": "Signal Blue",
+        "canonical": "#6aa9ff",
+        "tonalRamp": [
+          "oklch(15% 0.142 256.5)",
+          "oklch(26% 0.142 256.5)",
+          "oklch(38% 0.142 256.5)",
+          "oklch(50% 0.142 256.5)",
+          "oklch(62% 0.142 256.5)",
+          "oklch(74% 0.142 256.5)",
+          "oklch(85% 0.142 256.5)",
+          "oklch(95% 0.142 256.5)"
+        ],
+        "purpose": "Links on hover, active nav underline, meters, inline actions, focus ring."
+      },
+      "signal-blue-wash": {
+        "role": "primary",
+        "displayName": "Signal Blue Wash",
+        "canonical": "rgb(96 165 250 / 0.12)",
+        "tonalRamp": [
+          "oklch(15% 0.143 254.6)",
+          "oklch(26% 0.143 254.6)",
+          "oklch(38% 0.143 254.6)",
+          "oklch(50% 0.143 254.6)",
+          "oklch(62% 0.143 254.6)",
+          "oklch(74% 0.143 254.6)",
+          "oklch(85% 0.143 254.6)",
+          "oklch(95% 0.143 254.6)"
+        ],
+        "purpose": "Selection background (12% alpha)."
+      },
+      "action-blue": {
+        "role": "primary",
+        "displayName": "Action Blue",
+        "canonical": "#2563eb",
+        "tonalRamp": [
+          "oklch(15% 0.215 262.9)",
+          "oklch(26% 0.215 262.9)",
+          "oklch(38% 0.215 262.9)",
+          "oklch(50% 0.215 262.9)",
+          "oklch(62% 0.215 262.9)",
+          "oklch(74% 0.215 262.9)",
+          "oklch(85% 0.215 262.9)",
+          "oklch(95% 0.215 262.9)"
+        ],
+        "purpose": "Primary button fill, both themes."
+      },
+      "action-blue-deep": {
+        "role": "primary",
+        "displayName": "Action Blue Deep",
+        "canonical": "#1d4ed8",
+        "tonalRamp": [
+          "oklch(15% 0.217 264.4)",
+          "oklch(26% 0.217 264.4)",
+          "oklch(38% 0.217 264.4)",
+          "oklch(50% 0.217 264.4)",
+          "oklch(62% 0.217 264.4)",
+          "oklch(74% 0.217 264.4)",
+          "oklch(85% 0.217 264.4)",
+          "oklch(95% 0.217 264.4)"
+        ],
+        "purpose": "Primary button hover."
+      },
+      "open-green": {
+        "role": "tertiary",
+        "displayName": "Open Green",
+        "canonical": "#34d399",
+        "tonalRamp": [
+          "oklch(15% 0.153 163.2)",
+          "oklch(26% 0.153 163.2)",
+          "oklch(38% 0.153 163.2)",
+          "oklch(50% 0.153 163.2)",
+          "oklch(62% 0.153 163.2)",
+          "oklch(74% 0.153 163.2)",
+          "oklch(85% 0.153 163.2)",
+          "oklch(95% 0.153 163.2)"
+        ],
+        "purpose": "Availability dot only."
+      },
+      "paper-ground": {
+        "role": "neutral",
+        "displayName": "Paper Ground",
+        "canonical": "#fbfcfd",
+        "tonalRamp": [
+          "oklch(15% 0.002 247.8)",
+          "oklch(26% 0.002 247.8)",
+          "oklch(38% 0.002 247.8)",
+          "oklch(50% 0.002 247.8)",
+          "oklch(62% 0.002 247.8)",
+          "oklch(74% 0.002 247.8)",
+          "oklch(85% 0.002 247.8)",
+          "oklch(95% 0.002 247.8)"
+        ],
+        "purpose": "Page background, light theme."
+      },
+      "paper-surface": {
+        "role": "neutral",
+        "displayName": "Paper Surface",
+        "canonical": "#f1f4f8",
+        "tonalRamp": [
+          "oklch(15% 0.006 255.5)",
+          "oklch(26% 0.006 255.5)",
+          "oklch(38% 0.006 255.5)",
+          "oklch(50% 0.006 255.5)",
+          "oklch(62% 0.006 255.5)",
+          "oklch(74% 0.006 255.5)",
+          "oklch(85% 0.006 255.5)",
+          "oklch(95% 0.006 255.5)"
+        ],
+        "purpose": "Raised tone, light theme."
+      },
+      "hairline-light": {
+        "role": "neutral",
+        "displayName": "Hairline (light)",
+        "canonical": "#e2e7ee",
+        "tonalRamp": [
+          "oklch(15% 0.011 256.7)",
+          "oklch(26% 0.011 256.7)",
+          "oklch(38% 0.011 256.7)",
+          "oklch(50% 0.011 256.7)",
+          "oklch(62% 0.011 256.7)",
+          "oklch(74% 0.011 256.7)",
+          "oklch(85% 0.011 256.7)",
+          "oklch(95% 0.011 256.7)"
+        ],
+        "purpose": "Dividers, light theme."
+      },
+      "hairline-strong-light": {
+        "role": "neutral",
+        "displayName": "Hairline Strong (light)",
+        "canonical": "#cdd5e0",
+        "tonalRamp": [
+          "oklch(15% 0.018 256.3)",
+          "oklch(26% 0.018 256.3)",
+          "oklch(38% 0.018 256.3)",
+          "oklch(50% 0.018 256.3)",
+          "oklch(62% 0.018 256.3)",
+          "oklch(74% 0.018 256.3)",
+          "oklch(85% 0.018 256.3)",
+          "oklch(95% 0.018 256.3)"
+        ],
+        "purpose": "Control borders, light theme."
+      },
+      "ink-light": {
+        "role": "neutral",
+        "displayName": "Ink (light)",
+        "canonical": "#0f172a",
+        "tonalRamp": [
+          "oklch(15% 0.040 265.8)",
+          "oklch(26% 0.040 265.8)",
+          "oklch(38% 0.040 265.8)",
+          "oklch(50% 0.040 265.8)",
+          "oklch(62% 0.040 265.8)",
+          "oklch(74% 0.040 265.8)",
+          "oklch(85% 0.040 265.8)",
+          "oklch(95% 0.040 265.8)"
+        ],
+        "purpose": "Headings, light theme."
+      },
+      "ink-secondary-light": {
+        "role": "neutral",
+        "displayName": "Ink Secondary (light)",
+        "canonical": "#334155",
+        "tonalRamp": [
+          "oklch(15% 0.039 257.3)",
+          "oklch(26% 0.039 257.3)",
+          "oklch(38% 0.039 257.3)",
+          "oklch(50% 0.039 257.3)",
+          "oklch(62% 0.039 257.3)",
+          "oklch(74% 0.039 257.3)",
+          "oklch(85% 0.039 257.3)",
+          "oklch(95% 0.039 257.3)"
+        ],
+        "purpose": "Body copy, light theme."
+      },
+      "muted-light": {
+        "role": "neutral",
+        "displayName": "Muted Slate (light)",
+        "canonical": "#5b6678",
+        "tonalRamp": [
+          "oklch(15% 0.032 260.3)",
+          "oklch(26% 0.032 260.3)",
+          "oklch(38% 0.032 260.3)",
+          "oklch(50% 0.032 260.3)",
+          "oklch(62% 0.032 260.3)",
+          "oklch(74% 0.032 260.3)",
+          "oklch(85% 0.032 260.3)",
+          "oklch(95% 0.032 260.3)"
+        ],
+        "purpose": "Metadata, light theme."
+      },
+      "signal-blue-light": {
+        "role": "primary",
+        "displayName": "Signal Blue (light)",
+        "canonical": "#1d4ed8",
+        "tonalRamp": [
+          "oklch(15% 0.217 264.4)",
+          "oklch(26% 0.217 264.4)",
+          "oklch(38% 0.217 264.4)",
+          "oklch(50% 0.217 264.4)",
+          "oklch(62% 0.217 264.4)",
+          "oklch(74% 0.217 264.4)",
+          "oklch(85% 0.217 264.4)",
+          "oklch(95% 0.217 264.4)"
+        ],
+        "purpose": "Interactive text and lines, light theme."
+      },
+      "signal-blue-wash-light": {
+        "role": "primary",
+        "displayName": "Signal Blue Wash (light)",
+        "canonical": "rgb(37 99 235 / 0.09)",
+        "tonalRamp": [
+          "oklch(15% 0.215 262.9)",
+          "oklch(26% 0.215 262.9)",
+          "oklch(38% 0.215 262.9)",
+          "oklch(50% 0.215 262.9)",
+          "oklch(62% 0.215 262.9)",
+          "oklch(74% 0.215 262.9)",
+          "oklch(85% 0.215 262.9)",
+          "oklch(95% 0.215 262.9)"
+        ],
+        "purpose": "Selection background (9% alpha), light theme."
+      },
+      "open-green-light": {
+        "role": "tertiary",
+        "displayName": "Open Green (light)",
+        "canonical": "#059669",
+        "tonalRamp": [
+          "oklch(15% 0.127 163.2)",
+          "oklch(26% 0.127 163.2)",
+          "oklch(38% 0.127 163.2)",
+          "oklch(50% 0.127 163.2)",
+          "oklch(62% 0.127 163.2)",
+          "oklch(74% 0.127 163.2)",
+          "oklch(85% 0.127 163.2)",
+          "oklch(95% 0.127 163.2)"
+        ],
+        "purpose": "Availability dot, light theme."
+      },
+      "on-action": {
+        "role": "neutral",
+        "displayName": "On Action",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.000 89.9)",
+          "oklch(26% 0.000 89.9)",
+          "oklch(38% 0.000 89.9)",
+          "oklch(50% 0.000 89.9)",
+          "oklch(62% 0.000 89.9)",
+          "oklch(74% 0.000 89.9)",
+          "oklch(85% 0.000 89.9)",
+          "oklch(95% 0.000 89.9)"
+        ],
+        "purpose": "Text on action-blue fills."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the hero; once per page."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "The contact email link."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section headings in the left column."
+      },
+      "title-sm": {
+        "displayName": "Title Small",
+        "purpose": "Role titles and built-item labels."
+      },
+      "body-lead": {
+        "displayName": "Body Lead",
+        "purpose": "About summary, tagline, contact lede."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Page default, tabular numerals."
+      },
+      "body-sm": {
+        "displayName": "Body Small",
+        "purpose": "Bullets, built details, facts line."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav links, subheads, inline actions, metadata."
+      },
+      "data": {
+        "displayName": "Data",
+        "purpose": "Dates and rating values only."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Shared easing for all transitions."
+      },
+      {
+        "name": "state-transition",
+        "value": "200ms",
+        "purpose": "Colour, border and underline changes on hover."
+      },
+      {
+        "name": "nav-underline",
+        "value": "240ms",
+        "purpose": "Active nav underline scaleX."
+      },
+      {
+        "name": "expand",
+        "value": "320ms",
+        "purpose": "Experience role grid-row height expand."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "All transitions collapse under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "toolkit-stack",
+        "value": "480px"
+      },
+      {
+        "name": "rows-stack",
+        "value": "640px"
+      },
+      {
+        "name": "hero-compact",
+        "value": "720px"
+      },
+      {
+        "name": "nav-wrap",
+        "value": "760px"
+      },
+      {
+        "name": "section-stack",
+        "value": "860px"
+      },
+      {
+        "name": "skills-stack",
+        "value": "960px"
+      },
+      {
+        "name": "container",
+        "value": "1040px"
+      }
+    ],
+    "themes": {
+      "default": "dark",
+      "switch": "[data-theme='light'] on <html>, persisted in localStorage 'theme'",
+      "print": "black on white, nav and actions hidden"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Filled action-blue button for the main contact action.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><rect x=\"1.75\" y=\"3.25\" width=\"12.5\" height=\"9.5\" rx=\"1.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M2.5 4.25 L8 8.5 L13.5 4.25\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/></svg>Email me</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 18px; border-radius: 8px; font-family: 'Geist Variable', ui-sans-serif, system-ui, sans-serif; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; border: 0; cursor: pointer; transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1), border-color 200ms cubic-bezier(0.22, 1, 0.36, 1), color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn:focus-visible { outline: 2px solid var(--accent, #6aa9ff); outline-offset: 2px; } .ds-btn-primary { background: var(--button, #2563eb); color: #fff; } .ds-btn-primary:hover { background: var(--button-hover, #1d4ed8); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined button for external profiles such as LinkedIn.",
+      "html": "<a class=\"ds-btn ds-btn-secondary\" href=\"#\">LinkedIn<svg width=\"15\" height=\"15\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4.5 11.5 L11.5 4.5 M5.5 4.5 H11.5 V10.5\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 18px; border-radius: 8px; font-family: 'Geist Variable', ui-sans-serif, system-ui, sans-serif; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; border: 0; cursor: pointer; transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1), border-color 200ms cubic-bezier(0.22, 1, 0.36, 1), color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn:focus-visible { outline: 2px solid var(--accent, #6aa9ff); outline-offset: 2px; } .ds-btn-secondary { background: transparent; border: 1px solid var(--border-strong, #2c3a54); color: var(--ink, #e6eaf1); } .ds-btn-secondary:hover { background: var(--surface, #111a2e); border-color: var(--muted, #8c98ad); }"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Static tag for toolkit items and role stacks.",
+      "html": "<ul class=\"ds-chips\"><li>Kubernetes</li><li>Terraform</li><li>Jenkins</li><li>Harness</li></ul>",
+      "css": ".ds-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; font-family: 'Geist Variable', ui-sans-serif, system-ui, sans-serif; } .ds-chips li { font-size: 13px; line-height: 1.4; padding: 3px 9px; border-radius: 6px; background: var(--surface, #111a2e); border: 1px solid var(--border, #1e293d); color: var(--ink-2, #c2cad7); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky bar: name, section links with scroll-tracked active underline, theme toggle, small Email button.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-name\" href=\"#\">Jan Edward de Nicolas</a><nav class=\"ds-nav-links\"><a href=\"#\">About</a><a href=\"#\">Skills</a><a href=\"#\" aria-current=\"true\">Experience</a><a href=\"#\">Contact</a></nav><button class=\"ds-nav-theme\" aria-label=\"Switch to light theme\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41\"/></svg></button><a class=\"ds-nav-email\" href=\"#\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><rect x=\"1.75\" y=\"3.25\" width=\"12.5\" height=\"9.5\" rx=\"1.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M2.5 4.25 L8 8.5 L13.5 4.25\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/></svg>Email</a></header>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 20px; height: 60px; padding: 0 24px; background: var(--bg, #0b1120); border-bottom: 1px solid var(--border, #1e293d); font-family: 'Geist Variable', ui-sans-serif, system-ui, sans-serif; color: var(--ink, #e6eaf1); } .ds-nav-name { font-weight: 600; font-size: 15px; letter-spacing: -0.01em; text-decoration: none; color: inherit; white-space: nowrap; } .ds-nav-links { display: flex; gap: 24px; margin-left: auto; } .ds-nav-links a { position: relative; font-size: 14px; color: var(--muted, #8c98ad); text-decoration: none; padding: 6px 0; transition: color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav-links a:hover, .ds-nav-links a[aria-current] { color: var(--ink, #e6eaf1); } .ds-nav-links a::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; border-radius: 1px; background: var(--accent, #6aa9ff); transform: scaleX(0); transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav-links a[aria-current]::after { transform: scaleX(1); } .ds-nav-theme { width: 34px; height: 34px; display: grid; place-items: center; background: none; border: 1px solid var(--border-strong, #2c3a54); border-radius: 8px; color: var(--muted, #8c98ad); cursor: pointer; transition: color 200ms cubic-bezier(0.22, 1, 0.36, 1), border-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav-theme:hover { color: var(--ink, #e6eaf1); border-color: var(--muted, #8c98ad); } .ds-nav-email { display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 12px; border-radius: 8px; background: var(--button, #2563eb); color: #fff; font-size: 14px; font-weight: 500; text-decoration: none; transition: background-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav-email:hover { background: var(--button-hover, #1d4ed8); } .ds-nav a:focus-visible, .ds-nav button:focus-visible { outline: 2px solid var(--accent, #6aa9ff); outline-offset: 2px; border-radius: 4px; }"
+    },
+    {
+      "name": "Rating Meter",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Five-segment skill meter, always paired with a mono n/5 value.",
+      "html": "<ul class=\"ds-ratings\"><li><span class=\"ds-r-name\">Cloud Operations</span><span class=\"ds-meter\" role=\"img\" aria-label=\"4 out of 5\"><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i></i></span><span class=\"ds-r-val\">4/5</span></li><li><span class=\"ds-r-name\">Team Management</span><span class=\"ds-meter\" role=\"img\" aria-label=\"5 out of 5\"><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i><i class=\"on\"></i></span><span class=\"ds-r-val\">5/5</span></li></ul>",
+      "css": ".ds-ratings { margin: 0; padding: 0; list-style: none; font-family: 'Geist Variable', ui-sans-serif, system-ui, sans-serif; max-width: 360px; } .ds-ratings li { display: grid; grid-template-columns: minmax(0,1fr) auto 2.75rem; align-items: center; gap: 16px; padding-block: 12px; border-bottom: 1px solid var(--border, #1e293d); } .ds-r-name { font-size: 15px; color: var(--ink, #e6eaf1); white-space: nowrap; } .ds-meter { display: inline-flex; gap: 4px; } .ds-meter i { width: 16px; height: 6px; border-radius: 3px; background: var(--border-strong, #2c3a54); } .ds-meter i.on { background: var(--accent, #6aa9ff); } .ds-r-val { font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 13px; color: var(--muted, #8c98ad); text-align: right; }"
+    },
+    {
+      "name": "Experience Role",
+      "kind": "custom",
+      "refersTo": "inline-action",
+      "description": "Mono date column, role title, company, bullets with an inline Show all expand, then stack chips.",
+      "html": "<article class=\"ds-role\"><p class=\"ds-role-dates\">2021 – Present</p><div><h3 class=\"ds-role-title\">DevOps Tech Lead</h3><p class=\"ds-role-co\">National Australia Bank <span>· Melbourne, Australia</span></p><ul class=\"ds-role-bullets\"><li>Standardized enterprise CI/CD pipelines using Jenkins and Harness.</li><li>Led end-to-end migration of CI/CD pipelines from Jenkins to Harness.</li></ul><button class=\"ds-role-toggle\" aria-expanded=\"false\">Show all 10 highlights</button></div></article>",
+      "css": ".ds-role { display: grid; grid-template-columns: 8.5rem minmax(0,1fr); gap: 24px; font-family: 'Geist Variable', ui-sans-serif, system-ui, sans-serif; } .ds-role-dates { margin: 0; padding-top: 4px; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 13px; color: var(--muted, #8c98ad); white-space: nowrap; } .ds-role-title { margin: 0; font-size: 1.125rem; font-weight: 600; line-height: 1.4; color: var(--ink, #e6eaf1); } .ds-role-co { margin: 2px 0 0; font-size: 15px; color: var(--ink-2, #c2cad7); } .ds-role-co span { color: var(--muted, #8c98ad); } .ds-role-bullets { margin: 14px 0 0; padding: 0; list-style: none; max-width: 72ch; } .ds-role-bullets li { position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 15px; line-height: 1.65; color: var(--ink-2, #c2cad7); } .ds-role-bullets li::before { content: ''; position: absolute; left: 2px; top: 0.72em; width: 5px; height: 5px; border-radius: 50%; background: var(--muted, #8c98ad); } .ds-role-toggle { margin-top: 2px; padding: 4px 0; background: none; border: 0; font: inherit; font-size: 14px; font-weight: 500; color: var(--accent, #6aa9ff); cursor: pointer; } .ds-role-toggle:hover { text-decoration: underline; text-underline-offset: 0.2em; } .ds-role-toggle:focus-visible { outline: 2px solid var(--accent, #6aa9ff); outline-offset: 2px; border-radius: 4px; }"
+    },
+    {
+      "name": "Section",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Heading-left, content-right section grid with a hairline top rule.",
+      "html": "<section class=\"ds-section\"><h2>About</h2><p>With 8 years in software engineering and 5 years of specialized DevOps experience, I bring a rare combination of full-stack depth and operational excellence.</p></section>",
+      "css": ".ds-section { display: grid; grid-template-columns: 180px minmax(0,1fr); gap: 48px; padding-block: 48px; border-top: 1px solid var(--border, #1e293d); font-family: 'Geist Variable', ui-sans-serif, system-ui, sans-serif; } .ds-section h2 { margin: 0; font-size: 1.25rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.015em; color: var(--ink, #e6eaf1); } .ds-section p { margin: 0; font-size: 1.0625rem; line-height: 1.75; color: var(--ink-2, #c2cad7); max-width: 68ch; }"
+    },
+    {
+      "name": "Contact Email Link",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Oversized headline-scale email link with a resting hairline underline.",
+      "html": "<a class=\"ds-email\" href=\"#\">hello@example.com</a>",
+      "css": ".ds-email { font-family: 'Geist Variable', ui-sans-serif, system-ui, sans-serif; font-size: 2.25rem; font-weight: 600; letter-spacing: -0.025em; line-height: 1.2; color: var(--ink, #e6eaf1); text-decoration: underline; text-decoration-color: var(--border-strong, #2c3a54); text-decoration-thickness: 2px; text-underline-offset: 0.18em; transition: color 200ms cubic-bezier(0.22, 1, 0.36, 1), text-decoration-color 200ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-email:hover { color: var(--accent, #6aa9ff); text-decoration-color: currentColor; } .ds-email:focus-visible { outline: 2px solid var(--accent, #6aa9ff); outline-offset: 2px; border-radius: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Well-Set Résumé",
+    "overview": "A single full-width column on a dark slate ground, read top to bottom like a carefully typeset CV. The content is the design: one sans family, one blue, hairline rules between rows, and nothing themed or costumed around it. Structure comes from a consistent two-column section grid (heading left, content right) and from typographic weight, not from cards, panels or ornament.\n\nDensity is moderate and scannable. Rows are divided by 1px hairlines; data (dates, rating values) drops into Geist Mono at a small size so it reads as record, not prose. Dark is the default; a light \"paper\" theme mirrors every role token one-for-one through `[data-theme='light']`. Motion is restrained to colour and underline transitions and one height ease; nothing animates on load.\n\nThe benchmark is the polished developer portfolio category (brittanychiang.com, leerob.com) executed at full craft. Conceptual or themed worlds were tried and set aside for this product.",
+    "keyCharacteristics": [
+      "One sans family (Geist) for everything; Geist Mono only for dates and small numeric data.",
+      "One blue accent family: a light signal blue for links, active nav, meters and focus; a saturated action blue for filled buttons.",
+      "Flat surfaces separated by hairlines; a single raised surface tone for chips, photo backing and hover fills.",
+      "Heading-left, content-right section grid that collapses to one column on narrow screens.",
+      "Dark by default, light theme as a token swap, print stylesheet that strips to black on white."
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "Blue is the only hue that signals interaction. Signal blue for text and lines, action blue for fills. No second accent colour; green exists only as the status dot.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paired Token Rule",
+        "body": "Every neutral and accent role has a dark and a light value and changes only through `[data-theme]`. Never hard-code a colour in a component; the one exception is white text on action blue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Is Data Rule",
+        "body": "Geist Mono appears only on dates and numeric values. Never on headings, labels or body copy.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "All labels and headings are sentence case at normal tracking. No uppercase tracked labels above headings.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "Separation is a 1px hairline or a one-step surface tone. No shadows, no glass, no gradients.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the paired dark/light role tokens for every colour; add both values when introducing a role.",
+      "Do separate content with 1px hairlines and the single slate surface tone.",
+      "Do use the heading-left, content-right section grid (180px / fluid, 48px gap) for any new section.",
+      "Do keep Geist Mono to dates and numeric values at 13px.",
+      "Do keep motion to 200ms colour/underline transitions on the shared ease (cubic-bezier(0.22, 1, 0.36, 1)), with nothing animating on load.",
+      "Do pair any graphical indicator (meter, dot) with text that carries the same meaning."
+    ],
+    "donts": [
+      "Don't add a second accent hue; blue is the only interactive colour.",
+      "Don't use box-shadows, glows, gradients or glass blur for depth.",
+      "Don't put uppercase tracked labels or kickers above headings; section titles stand alone.",
+      "Don't wrap sections or rows in bordered cards; rows are hairline-divided, not boxed.",
+      "Don't use text glyphs or emoji as icons; icons are inline stroke SVGs.",
+      "Don't reintroduce themed or metaphorical chrome around the content."
+    ]
+  }
+}
