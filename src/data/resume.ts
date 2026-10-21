@@ -52,6 +52,8 @@ export type BuiltItem = {
   where: string[]
   /** One outcome, taken from the experience bullets */
   detail: string
+  /** Tools behind it; names match the toolkit and role stacks */
+  tools: string[]
 }
 
 export type ResumeData = {
@@ -74,6 +76,8 @@ export type ResumeData = {
   skillsSummary: SkillRating[]
   whatIBuilt: BuiltItem[]
   skills: { category: string; items: string[] }[]
+  /** Toolkit items used on personal time rather than in a listed role */
+  personalTools: string[]
   experience: Experience[]
   education: Education[]
 }
@@ -116,6 +120,21 @@ export const resume: ResumeData = {
       code: 'CICD',
       where: ['NAB', 'ACN-AU'],
       detail: 'Standardized enterprise CI/CD pipelines using Jenkins and Harness, accelerating release cycles and improving deployment consistency across multiple teams.',
+      tools: [
+        'Jenkins',
+        'Harness',
+        'Git',
+        'Cursor',
+        'Python',
+        'Shell/Bash',
+        'AWS',
+        'Azure',
+        'Google Cloud',
+        'Docker',
+        'Kubernetes',
+        'Terraform',
+        'Ansible',
+      ],
     },
     {
       label: 'Helm Charts',
@@ -123,6 +142,7 @@ export const resume: ResumeData = {
       code: 'HELM',
       where: ['NAB'],
       detail: 'Converted legacy infrastructure-as-code to Helm charts, improving Kubernetes deployment standardization and accelerating release readiness.',
+      tools: ['Kubernetes'],
     },
     {
       label: 'Microservices',
@@ -130,6 +150,7 @@ export const resume: ResumeData = {
       code: 'MSVC',
       where: ['ACN-AU'],
       detail: 'Contributed to large-scale modernization at a major Australian bank, transitioning monolithic systems to a microservices architecture.',
+      tools: ['Java', 'Spring', 'SQL', 'Gradle', 'Node'],
     },
     {
       label: 'Java Libraries',
@@ -137,6 +158,7 @@ export const resume: ResumeData = {
       code: 'JLIB',
       where: ['ACN-AU'],
       detail: 'Developed standardized Java bootstrapping frameworks and coding patterns, improving consistency, maintainability, and developer onboarding efficiency.',
+      tools: ['Java', 'Maven', 'Gradle', 'Node'],
     },
     {
       label: 'Application Test Suites',
@@ -144,6 +166,7 @@ export const resume: ResumeData = {
       code: 'TEST',
       where: ['NAB', 'ACN-PH'],
       detail: 'Developed AI-assisted test case applications adopted organization-wide, increasing test coverage and reducing manual testing effort.',
+      tools: ['JUnit', 'Selenium', 'Jasmine'],
     },
     {
       label: 'MVC Applications',
@@ -151,8 +174,10 @@ export const resume: ResumeData = {
       code: 'MVC',
       where: ['ACN-PH'],
       detail: 'Modernized a legacy web application by migrating from Dojo Toolkit to jQuery, Bootstrap, and Kendo UI within an MVC architecture, improving usability and maintainability.',
+      tools: ['JavaScript', 'jQuery', 'Bootstrap', 'Kendo UI'],
     },
   ],
+  personalTools: ['C/C++', 'Ruby', 'Django', 'Rails'],
   skills: [
     {
       category: 'Languages',
@@ -191,7 +216,7 @@ export const resume: ResumeData = {
         'Partnered with development teams to provision and configure infrastructure on AWS and Microsoft Azure, enabling scalable cloud-native solutions.',
         'Mentored engineers and cross-functional teams, driving DevOps adoption and continuous improvement initiatives.',
       ],
-      stack: ['Shell/Bash', 'Python', 'Terraform', 'Kubernetes', 'Docker', 'Jenkins', 'Harness', 'AWS', 'Azure', 'GCP', 'Git'],
+      stack: ['Shell/Bash', 'Python', 'Terraform', 'Kubernetes', 'Docker', 'Jenkins', 'Harness', 'AWS', 'Azure', 'Google Cloud', 'Git', 'Gradle', 'Node', 'Cursor', 'Ansible'],
     },
     {
       code: 'ACN-AU',
@@ -210,7 +235,7 @@ export const resume: ResumeData = {
         'Managed production support and change requests in compliance with structured change management processes.',
         'Developed standardized Java bootstrapping frameworks and coding patterns, improving consistency, maintainability, and developer onboarding efficiency.',
       ],
-      stack: ['Java', 'Spring', 'Maven', 'Jenkins', 'SQL', 'Git'],
+      stack: ['Java', 'Spring', 'Maven', 'Gradle', 'Node', 'Jenkins', 'SQL', 'Git'],
     },
     {
       code: 'ACN-PH',
@@ -228,7 +253,7 @@ export const resume: ResumeData = {
         'Presented front-end framework upgrade recommendations through proof-of-concept demonstrations to senior leadership.',
         'Deployed a full-stack web application to production using AngularJS and Bootstrap on the front-end and EJB-based services on the back-end.',
       ],
-      stack: ['Dojo', 'jQuery', 'Bootstrap', 'Kendo UI', 'Java', 'JUnit', 'Selenium', 'Jasmine'],
+      stack: ['JavaScript', 'Dojo', 'jQuery', 'Bootstrap', 'Kendo UI', 'Java', 'SQL', 'JUnit', 'Selenium', 'Jasmine'],
     },
   ],
   education: [

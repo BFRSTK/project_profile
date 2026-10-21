@@ -1,17 +1,20 @@
 import { useState } from 'react'
 import type { Experience as Job, ResumeData } from '../data/resume'
 import { Section } from './Section'
+import { ToolList, same, useSkillLink } from './SkillLink'
 
 const VISIBLE = 4
 
 function Role({ job }: { job: Job }) {
   const [expanded, setExpanded] = useState(false)
+  const { active } = useSkillLink()
+  const state = !active ? '' : job.stack?.some((s) => same(s, active)) ? ' role--match' : ' role--dim'
   const shown = job.bullets.slice(0, VISIBLE)
   const rest = job.bullets.slice(VISIBLE)
   const restId = `exp-more-${job.code}`
 
   return (
-    <article className="role" id={`exp-${job.code}`}>
+    <article className={`role${state}`} id={`exp-${job.code}`}>
       <p className="role__dates">
         <time>{job.start}</time> – <time>{job.end}</time>
       </p>
@@ -46,11 +49,9 @@ function Role({ job }: { job: Job }) {
           </>
         )}
         {job.stack && (
-          <ul className="chips role__stack" aria-label="Stack">
-            {job.stack.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
+          <div className="role__stack">
+            <ToolList tools={job.stack} label="Stack" />
+          </div>
         )}
       </div>
     </article>

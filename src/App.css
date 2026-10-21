@@ -347,7 +347,8 @@
   gap: 6px;
 }
 
-.chips li {
+/* Tool chips: every chip is a control that drives the shared tool selection. */
+.tool {
   font-size: 13px;
   line-height: 1.4;
   padding: 3px 9px;
@@ -355,6 +356,111 @@
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--ink-2);
+  transition:
+    background-color 200ms var(--ease),
+    border-color 200ms var(--ease),
+    color 200ms var(--ease),
+    transform 200ms var(--ease);
+}
+
+.tool:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.tool:active {
+  transform: scale(0.96);
+}
+
+.tool--active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.tool[aria-pressed='true'] {
+  background: var(--button);
+  border-color: var(--button);
+  color: #fff;
+}
+
+/* The answer to "where did he use this?" */
+.answer {
+  min-height: 3.2em;
+  margin-bottom: 4px;
+}
+
+.answer__hint,
+.answer__text,
+.built__filter {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.answer__text strong,
+.built__filter strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.answer__text a {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+.answer__clear {
+  margin-left: 10px;
+  padding: 1px 8px;
+  font-size: 13px;
+  background: none;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  color: var(--ink-2);
+  transition: border-color 200ms var(--ease), color 200ms var(--ease);
+}
+
+.answer__clear:hover {
+  border-color: var(--muted);
+  color: var(--ink);
+}
+
+.built__filter {
+  margin-bottom: 18px;
+}
+
+.built__filter:empty {
+  margin: 0;
+}
+
+/* Rows answer to the active tool: matches light, the rest step back. */
+.built__item,
+.role {
+  transition: opacity 260ms var(--ease), background-color 260ms var(--ease);
+}
+
+.built__item--dim,
+.role--dim {
+  opacity: 0.38;
+}
+
+.built__item--match {
+  background: var(--accent-soft);
+  border-radius: 8px;
+}
+
+.built__item .chips {
+  margin-top: 10px;
+}
+
+::view-transition-group(*) {
+  animation-duration: 460ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
 }
 
 /* ---------- About ---------- */
@@ -446,17 +552,13 @@
   display: grid;
   grid-template-columns: 14rem minmax(0, 1fr);
   gap: 24px;
-  padding-block: 18px;
+  padding: 18px 14px;
+  margin-inline: -14px;
   border-bottom: 1px solid var(--border);
 }
 
-.built__item:first-child {
-  padding-top: 0;
-}
-
 .built__item:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
+  border-bottom-color: transparent;
 }
 
 .built__label {

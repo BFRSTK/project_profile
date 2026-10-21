@@ -1,5 +1,6 @@
 import type { ResumeData } from '../data/resume'
 import { Section } from './Section'
+import { ToolList, useSkillLink } from './SkillLink'
 
 const SCALE = 5
 
@@ -10,6 +11,46 @@ function Meter({ level }: { level: number }) {
         <span key={i} className={`meter__seg${i < level ? ' meter__seg--on' : ''}`} />
       ))}
     </span>
+  )
+}
+
+const joinNames = (names: string[]) =>
+  names.length <= 1 ? names.join('') : `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`
+
+/** Answers "where did he use this?" for the active tool. */
+function Answer() {
+  const { active, pinned, clear, rolesFor, buildsFor, isPersonal } = useSkillLink()
+
+  if (!active) {
+    return <p className="answer__hint">Pick any tool to see where I've used it.</p>
+  }
+
+  const roles = rolesFor(active).map((j) => j.company.replace(' - ', ', '))
+  const builds = buildsFor(active).map((b) => b.label)
+
+  return (
+    <p className="answer__text">
+      <strong>{active}</strong>
+      {roles.length === 0 &&
+        builds.length === 0 &&
+        (isPersonal(active)
+          ? ': used on my own time, outside the roles listed here.'
+          : ': part of my toolkit, not tied to a role listed here.')}
+      {roles.length > 0 && <>: used at {joinNames(roles)}</>}
+      {builds.length > 0 && (
+        <>
+          {roles.length > 0 ? ', behind ' : ': behind '}
+          <a href="#built">{joinNames(builds)}</a>
+        </>
+      )}
+      {(roles.length > 0 || builds.length > 0) && '.'}
+      {(roles.length > 0 || builds.length > 0) && isPersonal(active) && ' Also used on my own time.'}
+      {pinned && (
+        <button type="button" className="answer__clear" onClick={clear}>
+          Clear
+        </button>
+      )}
+    </p>
   )
 }
 
@@ -39,16 +80,15 @@ export function Skills({
         </div>
         <div>
           <h3 className="subhead">Toolkit</h3>
+          <div className="answer" aria-live="polite">
+            <Answer />
+          </div>
           <dl className="toolkit">
             {skills.map((group) => (
               <div key={group.category} className="toolkit__row">
                 <dt>{group.category}</dt>
                 <dd>
-                  <ul className="chips">
-                    {group.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
+                  <ToolList tools={group.items} label={group.category} />
                 </dd>
               </div>
             ))}

@@ -9,6 +9,7 @@ import { Experience } from './components/Experience'
 import { Education } from './components/Education'
 import { Contact } from './components/Contact'
 import { ArrowIcon } from './components/Icons'
+import { SkillLinkProvider } from './components/SkillLink'
 
 export default function App() {
   return (
@@ -17,15 +18,17 @@ export default function App() {
         Skip to experience
       </a>
       <Nav name={resume.name} email={resume.contact.email} />
-      <main className="app">
-        <Hero data={resume} />
-        <About summary={resume.summary} />
-        <Skills ratings={resume.skillsSummary} skills={resume.skills} />
-        <WhatIBuilt items={resume.whatIBuilt} experience={resume.experience} />
-        <Experience experience={resume.experience} />
-        <Education education={resume.education} />
-        <Contact contact={resume.contact} />
-      </main>
+      <SkillLinkProvider data={resume}>
+        <main className="app">
+          <Hero data={resume} />
+          <About summary={resume.summary} />
+          <Skills ratings={resume.skillsSummary} skills={resume.skills} />
+          <WhatIBuilt items={resume.whatIBuilt} experience={resume.experience} />
+          <Experience experience={resume.experience} />
+          <Education education={resume.education} />
+          <Contact contact={resume.contact} />
+        </main>
+      </SkillLinkProvider>
       <footer className="footer">
         <div className="footer__inner">
           <span>
