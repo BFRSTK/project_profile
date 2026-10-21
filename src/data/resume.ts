@@ -10,6 +10,8 @@ export type Project = {
 }
 
 export type Experience = {
+  /** Short strip designator, e.g. NAB */
+  code: string
   company: string
   role: string
   location?: string
@@ -20,6 +22,7 @@ export type Experience = {
 }
 
 export type Education = {
+  code: string
   school: string
   degree: string
   start: string
@@ -27,9 +30,12 @@ export type Education = {
   detail?: string
 }
 
-export type Stat = {
-  label: string
-  value: string
+export type YearsSummary = {
+  total: string
+  /** How the total splits by discipline */
+  split: { years: string; area: string }[]
+  /** Years, within the total, spent mentoring engineering teams */
+  mentoring: string
 }
 
 export type SkillRating = {
@@ -40,7 +46,12 @@ export type SkillRating = {
 export type BuiltItem = {
   label: string
   icon: 'mvc' | 'microservices' | 'cicd' | 'testsuites' | 'javalibs' | 'helmcharts'
-  color: string
+  /** Short type code printed on the strip */
+  code: string
+  /** Experience codes where this was built */
+  where: string[]
+  /** One outcome, taken from the experience bullets */
+  detail: string
 }
 
 export type ResumeData = {
@@ -53,7 +64,7 @@ export type ResumeData = {
   available: boolean
   photo?: string
   summary: string
-  stats: Stat[]
+  years: YearsSummary
   contact: {
     email: string
     github?: string
@@ -75,14 +86,17 @@ export const resume: ResumeData = {
   title: 'DevOps Technical Lead',
   location: 'Melbourne, Australia',
   available: true,
-  photo: '/photo.jpg',
+  photo: '/photo-900.jpg',
   summary:
-    "With 8 years in software engineering and 5 years of specialized DevOps experience, I bring a rare combination of full-stack technical depth and operational excellence — spanning everything from front-end interfaces to the pipelines and infrastructure that power them. I have a proven track record of designing and implementing CI/CD systems, driving automation initiatives, and ensuring system reliability at scale, all grounded in a strong Computer Engineering foundation in C/C++ and Java. Beyond the technical, I've built and mentored high-performing engineering teams across diverse roles and career levels, earning a reputation as a fast-moving, analytical problem-solver who delivers with clarity and composure.",
-  stats: [
-    { label: 'Years in Software Engineering', value: '8' },
-    { label: 'Years in DevOps', value: '5' },
-    { label: 'Collective experience years mentoring engineering teams', value: '8' },
-  ],
+    "With 8 years in software engineering and 6 years of specialized DevOps experience, I bring a rare combination of full-stack technical depth and operational excellence — spanning everything from front-end interfaces to the pipelines and infrastructure that power them. I have a proven track record of designing and implementing CI/CD systems, driving automation initiatives, and ensuring system reliability at scale, all grounded in a strong Computer Engineering foundation in C/C++ and Java. Beyond the technical, I've built and mentored high-performing engineering teams across diverse roles and career levels, earning a reputation as a fast-moving, analytical problem-solver who delivers with clarity and composure.",
+  years: {
+    total: '14',
+    split: [
+      { years: '8', area: 'software engineering' },
+      { years: '6', area: 'DevOps' },
+    ],
+    mentoring: '8',
+  },
   contact: {
     email: 'edwarddenicolas@gmail.com',
     linkedin: 'https://www.linkedin.com/in/jan-edward-de-nicolas/',
@@ -96,12 +110,48 @@ export const resume: ResumeData = {
     { name: 'SDLC Practices', level: 5 },
   ],
   whatIBuilt: [
-    { label: 'MVC Applications', icon: 'mvc', color: '#60a5fa' },
-    { label: 'Microservices', icon: 'microservices', color: '#a78bfa' },
-    { label: 'CI/CD Pipelines', icon: 'cicd', color: '#34d399' },
-    { label: 'Application Test Suites', icon: 'testsuites', color: '#f59e0b' },
-    { label: 'Java Libraries', icon: 'javalibs', color: '#f87171' },
-    { label: 'Helm Charts', icon: 'helmcharts', color: '#2dd4bf' },
+    {
+      label: 'CI/CD Pipelines',
+      icon: 'cicd',
+      code: 'CICD',
+      where: ['NAB', 'ACN-AU'],
+      detail: 'Standardized enterprise CI/CD pipelines using Jenkins and Harness, accelerating release cycles and improving deployment consistency across multiple teams.',
+    },
+    {
+      label: 'Helm Charts',
+      icon: 'helmcharts',
+      code: 'HELM',
+      where: ['NAB'],
+      detail: 'Converted legacy infrastructure-as-code to Helm charts, improving Kubernetes deployment standardization and accelerating release readiness.',
+    },
+    {
+      label: 'Microservices',
+      icon: 'microservices',
+      code: 'MSVC',
+      where: ['ACN-AU'],
+      detail: 'Contributed to large-scale modernization at a major Australian bank, transitioning monolithic systems to a microservices architecture.',
+    },
+    {
+      label: 'Java Libraries',
+      icon: 'javalibs',
+      code: 'JLIB',
+      where: ['ACN-AU'],
+      detail: 'Developed standardized Java bootstrapping frameworks and coding patterns, improving consistency, maintainability, and developer onboarding efficiency.',
+    },
+    {
+      label: 'Application Test Suites',
+      icon: 'testsuites',
+      code: 'TEST',
+      where: ['NAB', 'ACN-PH'],
+      detail: 'Developed AI-assisted test case applications adopted organization-wide, increasing test coverage and reducing manual testing effort.',
+    },
+    {
+      label: 'MVC Applications',
+      icon: 'mvc',
+      code: 'MVC',
+      where: ['ACN-PH'],
+      detail: 'Modernized a legacy web application by migrating from Dojo Toolkit to jQuery, Bootstrap, and Kendo UI within an MVC architecture, improving usability and maintainability.',
+    },
   ],
   skills: [
     {
@@ -114,7 +164,7 @@ export const resume: ResumeData = {
     },
     {
       category: 'Infrastructure',
-      items: ['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubenetes', 'Terraform', 'Ansible'],
+      items: ['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes', 'Terraform', 'Ansible'],
     },
     {
       category: 'Tools',
@@ -123,6 +173,7 @@ export const resume: ResumeData = {
   ],
   experience: [
     {
+      code: 'NAB',
       company: 'National Australia Bank',
       role: 'DevOps Tech Lead',
       location: 'Melbourne, Australia',
@@ -143,6 +194,7 @@ export const resume: ResumeData = {
       stack: ['Shell/Bash', 'Python', 'Terraform', 'Kubernetes', 'Docker', 'Jenkins', 'Harness', 'AWS', 'Azure', 'GCP', 'Git'],
     },
     {
+      code: 'ACN-AU',
       company: 'Accenture - Australia',
       role: 'Application Development Specialist',
       location: 'Melbourne, Australia',
@@ -161,6 +213,7 @@ export const resume: ResumeData = {
       stack: ['Java', 'Spring', 'Maven', 'Jenkins', 'SQL', 'Git'],
     },
     {
+      code: 'ACN-PH',
       company: 'Accenture - Philippines',
       role: 'Senior Software Engineer',
       location: 'Manila, Philippines',
@@ -180,6 +233,7 @@ export const resume: ResumeData = {
   ],
   education: [
     {
+      code: 'USLS',
       school: 'University of St. La Salle',
       degree: 'B.S. Computer Engineering',
       start: '2007',

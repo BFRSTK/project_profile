@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;width:1440px;height:900px;overflow:hidden;background:#fff;color:#141414;font-family:Georgia,serif}
+.n{position:absolute;left:64px;top:40px;font-size:118px;letter-spacing:-.02em;font-weight:700;font-family:"Helvetica Neue",Arial,sans-serif}
+.i{position:absolute;left:68px;top:180px;font:600 15px/1 Arial;letter-spacing:.3em;text-transform:uppercase}
+.ph{position:absolute;right:64px;top:40px;width:220px;height:260px;background:#ddd;filter:grayscale(1)}
+.cue{position:absolute;left:68px;top:216px;color:#d23a2a;font:700 26px/1 "Bradley Hand","Comic Sans MS",cursive;border:3px solid #d23a2a;padding:10px 18px;border-radius:40px;transform:rotate(-2deg)}
+.sys{position:absolute;left:64px;right:64px;top:340px}
+.st{position:relative;height:96px}.st .l{position:absolute;left:0;top:32px;width:150px;font:600 15px Arial;text-transform:uppercase;letter-spacing:.12em}
+.st .lines{position:absolute;left:170px;right:0;top:18px;height:48px;background:repeating-linear-gradient(#141414 0 1.5px,transparent 1.5px 12px)}
+.bar{position:absolute;top:0;bottom:-6px;width:2px;background:#141414}
+.rm{position:absolute;top:-34px;border:2.5px solid #1f4fd1;color:#1f4fd1;font:700 20px Arial;padding:2px 8px}
+.yr{position:absolute;top:-34px;font:600 14px Arial;letter-spacing:.1em}
+.notes{position:absolute;left:170px;right:0;top:18px;height:48px}
+.notes i{position:absolute;width:16px;height:12px;border-radius:50%;background:#141414;transform:rotate(-20deg)}
+</style></head><body>
+<div class="n">Jan Edward de Nicolas</div><div class="i">DevOps Tech Lead &nbsp;·&nbsp; full score &nbsp;·&nbsp; Melbourne</div>
+<div class="cue">Email Jan ↗ &nbsp; LinkedIn ↗</div><div class="ph"></div>
+<div class="sys" id="s"></div>
+<script>
+const s=document.getElementById('s');['Coding','Solution design','Team management','Cloud ops','SDLC'].forEach((n,k)=>{const d=document.createElement('div');d.className='st';d.innerHTML='<div class="l">'+n+'</div><div class="lines"></div><div class="notes"></div>';const nt=d.querySelector('.notes');for(let x=0;x<60;x++){if(Math.random()<(k<1?.8:.3+k*.08)){const i=document.createElement('i');i.style.left=(x*1.6)+'%';i.style.top=(Math.floor(Math.random()*8)*6-2)+'px';nt.appendChild(i)}}s.appendChild(d)});
+[[0,'2012','A'],[33,'2016','B'],[75,'2021','C']].forEach(([p,y,r])=>{const b=document.createElement('div');b.className='bar';b.style.left='calc(170px + '+p+'% * .9)';s.appendChild(b);const m=document.createElement('div');m.className='rm';m.textContent=r;m.style.left='calc(178px + '+p+'% * .9)';s.appendChild(m);const t=document.createElement('div');t.className='yr';t.textContent=y;t.style.left='calc(214px + '+p+'% * .9)';s.appendChild(t)});
+</script></body></html>
