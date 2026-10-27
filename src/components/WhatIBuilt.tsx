@@ -2,6 +2,8 @@ import type { CSSProperties } from 'react'
 import type { BuiltItem, Experience } from '../data/resume'
 import { Section } from './Section'
 import { ToolList, same, useSkillLink } from './SkillLink'
+import { BuiltArt } from './BuiltArt'
+import { TopicIcon } from './Icons'
 
 export function WhatIBuilt({ items, experience }: { items: BuiltItem[]; experience: Experience[] }) {
   const { active, pinned, clear } = useSkillLink()
@@ -36,23 +38,29 @@ export function WhatIBuilt({ items, experience }: { items: BuiltItem[]; experien
               className={`built__item${state}`}
               style={{ viewTransitionName: `built-${item.code}` } as CSSProperties}
             >
+              <div className="built__art">
+                <BuiltArt icon={item.icon} />
+              </div>
               <div className="built__head">
-                <h3 className="built__label">{item.label}</h3>
-                <p className="built__where">
-                  {item.where.map((code, i) => (
-                    <span key={code}>
-                      {i > 0 && ', '}
-                      <a className="nowrap" href={`#exp-${code}`}>
-                        {companyFor(code)}
-                      </a>
-                    </span>
-                  ))}
-                </p>
+                <span className="icon-tile">
+                  <TopicIcon name={item.icon} />
+                </span>
+                <div>
+                  <h3 className="built__label">{item.label}</h3>
+                  <p className="built__where">
+                    {item.where.map((code, i) => (
+                      <span key={code}>
+                        {i > 0 && ', '}
+                        <a className="nowrap" href={`#exp-${code}`}>
+                          {companyFor(code)}
+                        </a>
+                      </span>
+                    ))}
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="built__detail">{item.detail}</p>
-                <ToolList tools={item.tools} label={`Tools behind ${item.label}`} />
-              </div>
+              <p className="built__detail">{item.detail}</p>
+              <ToolList tools={item.tools} label={`Tools behind ${item.label}`} />
             </li>
           )
         })}

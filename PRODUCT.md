@@ -27,8 +27,8 @@ Rare combination: 14 years in total, 8 of software engineering plus 6 of special
 ## Capabilities and Constraints
 
 - Single-page Vite + React + TypeScript site, statically built and deployed to Vercel.
-- **All content lives in `src/data/resume.ts`**: name, tagline, summary, stats, contact, skill ratings, "What I built", skills, experience and education. Components only render that data. Future work must keep this single source of truth; don't hardcode content in components.
-- Sections in order: Hero, About (summary + stats), What I Built, Skills Summary (1–5 ratings), Skills, Experience, Education, Contact, footer.
+- **All content lives in `src/data/resume.ts`**: name, tagline, summary, stats, contact, skill ratings, "What I built", AI workflow, skills, experience and education. Components only render that data. Future work must keep this single source of truth; don't hardcode content in components.
+- Sections in order: Hero, About (summary + stats), Skills Summary (1–5 ratings), Skills, What I Built, My AI Workflow, Experience, Education, Contact, footer.
 - `available: true` flag shows open-to-work status.
 
 ## Brand Commitments

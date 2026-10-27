@@ -56,6 +56,16 @@ export type BuiltItem = {
   tools: string[]
 }
 
+export type AIPractice = {
+  label: string
+  icon: 'assess' | 'automate' | 'frontend' | 'amplify'
+  /** Where it's used, e.g. a role or personal time */
+  context: string
+  /** Optional in-page link for the context, e.g. #exp-NAB */
+  href?: string
+  detail: string
+}
+
 export type ResumeData = {
   name: string
   firstName: string
@@ -75,6 +85,15 @@ export type ResumeData = {
   }
   skillsSummary: SkillRating[]
   whatIBuilt: BuiltItem[]
+  /** How AI tools fit into day-to-day engineering */
+  aiWorkflow: {
+    summary: string
+    /** Draft → refine → hand-off, drawn as the section's diagram */
+    flow: { who: string; steps: string[]; mine?: boolean }[]
+    /** Work agents run alongside the flow */
+    background: { who: string; steps: string[] }
+    practices: AIPractice[]
+  }
   skills: { category: string; items: string[] }[]
   /** Toolkit items used on personal time rather than in a listed role */
   personalTools: string[]
@@ -177,6 +196,48 @@ export const resume: ResumeData = {
       tools: ['JavaScript', 'jQuery', 'Bootstrap', 'Kendo UI'],
     },
   ],
+  aiWorkflow: {
+    summary:
+      'AI is built into how I work every day. I use it to get to a strong first draft faster and to take repetitive work off my plate, while the judgement, refinement and final decisions stay with me. The result is more time on architecture, quality and the people I lead.',
+    flow: [
+      { who: 'Cursor drafts', steps: ['Codebase assessment', 'Software design', 'Rough delivery timeline'] },
+      { who: 'I refine', steps: ['Review and challenge', 'Polish and decide'], mine: true },
+      { who: 'The team receives', steps: ['Reviewed designs', 'Plans with timelines'] },
+    ],
+    background: { who: 'Agents in the background', steps: ['Recurring reports', 'Repetitive task automation'] },
+    practices: [
+      {
+        label: 'Assessment & planning',
+        icon: 'assess',
+        context: 'Cursor · National Australia Bank',
+        href: '#exp-NAB',
+        detail:
+          'I use Cursor to assess codebases quickly, mapping structure, dependencies and risk, then draft software designs and rough delivery timelines for planning. Those drafts are a starting point: I review, challenge and refine each one myself before it goes to the team or stakeholders.',
+      },
+      {
+        label: 'Background automation',
+        icon: 'automate',
+        context: 'Cursor · National Australia Bank',
+        href: '#exp-NAB',
+        detail:
+          'While I focus on design and review, I run agents in the background to generate recurring reports and automate repetitive operational tasks, freeing hours each week for higher-value engineering work.',
+      },
+      {
+        label: 'Personal projects',
+        icon: 'frontend',
+        context: 'Claude · Personal time',
+        detail:
+          'My depth is in back-end, infrastructure and DevOps, and I am actively refreshing my front-end skills. On personal projects, Claude complements that gap, helping with modern UI frameworks, layout, styling and accessibility so I can ship complete, polished products while I rebuild that expertise. This site was built that way.',
+      },
+      {
+        label: 'How it amplifies me',
+        icon: 'amplify',
+        context: 'Across both',
+        detail:
+          'AI speeds up the work; 14 years of engineering judgement decides what ships. I hold everything it produces to the same standards as any code review, which lets me move faster without lowering the bar.',
+      },
+    ],
+  },
   personalTools: ['C/C++', 'Ruby', 'Django', 'Rails'],
   skills: [
     {
