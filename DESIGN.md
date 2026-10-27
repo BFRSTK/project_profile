@@ -253,6 +253,15 @@ Mono date column left; role title, company line with muted location, then up to 
 ### Text Links
 Inherit colour with a 1px underline at 0.2em offset. Underlines rest in hairline-strong and turn signal blue with the text on hover (200ms). The contact email is the one oversized link: headline type with a 2px underline.
 
+### Schematic Plates (What I've built)
+Each build shows a 320x132 line schematic of the mechanism it changed (pipeline stages, monolith to services, chart to cluster pods, shared library under services, AI-generated test runs, MVC in a browser frame). Plates use the photo frame: slate-surface fill, 1px hairline, 12px radius. Strokes are 1.25px: hairline-strong for context, signal blue (with signal-blue-wash fill) on the part delivered; 10.5px Geist labels in muted. Builds sit in a two-column grid (one column below 640px); a tool match lights the plate border signal blue.
+
+### Icon Tile
+40px square, 8px radius, slate-surface fill, 1px hairline, holding a 20px signal-blue stroke icon (1.5px). Leads each build and AI practice beside its title.
+
+### AI Workflow Diagram
+Three stages (drafts, I refine, the team receives) as surface-tone panels with 12px radius joined by muted arrows; the human stage alone takes the signal-blue border and wash. A dashed hairline-strong band beneath holds the background agents. Stacks vertically below 720px with arrows turned down. Practices follow in a two-column grid of hairline-topped entries with icon tiles.
+
 ## Do's and Don'ts
 
 ### Do:

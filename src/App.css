@@ -450,13 +450,8 @@
   opacity: 0.38;
 }
 
-.built__item--match {
-  background: var(--accent-soft);
-  border-radius: 8px;
-}
-
-.built__item .chips {
-  margin-top: 10px;
+.built__item--match .built__art {
+  border-color: var(--accent);
 }
 
 ::view-transition-group(*) {
@@ -616,24 +611,106 @@
   }
 }
 
-/* ---------- What I've built ---------- */
+/* ---------- Shared: icon tile ---------- */
 
-.built__item {
+.icon-tile {
   display: grid;
-  grid-template-columns: 14rem minmax(0, 1fr);
-  gap: 24px;
-  padding: 18px 14px;
-  margin-inline: -14px;
-  border-bottom: 1px solid var(--border);
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--accent);
 }
 
-.built__item:last-child {
-  border-bottom-color: transparent;
+.topic-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- What I've built ---------- */
+
+.built {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px 32px;
+}
+
+.built__item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Schematic plate: the photo's frame, one surface tone up. */
+.built__art {
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 260ms var(--ease);
+}
+
+.art {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.art__line,
+.art__acc,
+.art__dash {
+  fill: none;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.art__line,
+.art__dash {
+  stroke: var(--border-strong);
+}
+
+.art__dash {
+  stroke-dasharray: 4 5;
+}
+
+.art__acc {
+  stroke: var(--accent);
+}
+
+.art__ground {
+  fill: var(--bg);
+}
+
+.art__soft {
+  fill: var(--accent-soft);
+}
+
+.art__text {
+  fill: var(--muted);
+  stroke: none;
+  font-family: var(--font);
+  font-size: 10.5px;
+  font-weight: 500;
+}
+
+.art__text--acc {
+  fill: var(--accent);
+}
+
+.built__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .built__label {
-  font-size: 1rem;
-  line-height: 1.4;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
 
@@ -643,12 +720,14 @@
   color: var(--muted);
 }
 
-.built__where a {
+.built__where a,
+.practice__where a {
   text-decoration-color: var(--border-strong);
   transition: color 200ms var(--ease), text-decoration-color 200ms var(--ease);
 }
 
-.built__where a:hover {
+.built__where a:hover,
+.practice__where a:hover {
   color: var(--accent);
   text-decoration-color: currentColor;
 }
@@ -657,13 +736,198 @@
   font-size: 15px;
   line-height: 1.65;
   color: var(--ink-2);
-  max-width: 68ch;
 }
 
 @media (max-width: 640px) {
-  .built__item {
+  .built {
     grid-template-columns: minmax(0, 1fr);
-    gap: 6px;
+    gap: 40px;
+  }
+}
+
+/* ---------- My AI workflow ---------- */
+
+.ai__summary {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--ink-2);
+  max-width: 68ch;
+}
+
+.flow {
+  margin: 32px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.flow__stages {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.flow__stage {
+  padding: 18px 20px 20px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+/* The human step carries the accent: judgement is the point of the flow. */
+.flow__stage--mine {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.flow__who {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.flow__stage--mine .flow__who {
+  color: var(--accent);
+}
+
+.flow__steps {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.flow__steps li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.flow__steps li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.flow__stage--mine .flow__steps li::before {
+  background: var(--accent);
+}
+
+.flow__arrow {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  color: var(--muted);
+}
+
+.flow__arrow-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.flow__bg {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px dashed var(--border-strong);
+}
+
+.flow__bg-who {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.flow__bg-who .topic-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+}
+
+.flow__bg-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.flow__bg-steps li + li::before {
+  content: '·';
+  margin-inline: 10px;
+  color: var(--border-strong);
+}
+
+.practices {
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 32px;
+}
+
+.practice {
+  padding-block: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.practice__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.practice__label {
+  font-size: 1.125rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.practice__where {
+  margin-top: 2px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.practice__detail {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+@media (max-width: 720px) {
+  .flow__stages {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .flow__arrow {
+    width: auto;
+    height: 32px;
+  }
+  .flow__arrow-icon {
+    transform: rotate(90deg);
+  }
+  .practices {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

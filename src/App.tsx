@@ -4,6 +4,7 @@ import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
 import { WhatIBuilt } from './components/WhatIBuilt'
+import { AIWorkflow } from './components/AIWorkflow'
 import { Skills } from './components/Skills'
 import { Experience } from './components/Experience'
 import { Education } from './components/Education'
@@ -25,6 +26,7 @@ export default function App() {
             <About summary={resume.summary} />
             <Skills ratings={resume.skillsSummary} skills={resume.skills} />
             <WhatIBuilt items={resume.whatIBuilt} experience={resume.experience} />
+            <AIWorkflow workflow={resume.aiWorkflow} />
             <Experience experience={resume.experience} />
             <Education education={resume.education} />
             <Contact contact={resume.contact} />
