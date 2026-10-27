@@ -9,16 +9,16 @@ export function AIWorkflow({ workflow }: { workflow: ResumeData['aiWorkflow'] })
     <Section id="ai" title="My AI Workflow">
       <p className="ai__summary">{workflow.summary}</p>
 
-      <figure className="flow">
-        <div className="flow__stages">
+      <figure className="flow" aria-label={flow.map((stage) => stage.who).join(', then ')}>
+        <div className="flow__stages" role="list">
           {flow.map((stage, i) => (
             <Fragment key={stage.who}>
               {i > 0 && (
-                <span className="flow__arrow">
+                <span className="flow__arrow" aria-hidden="true">
                   <FlowArrowIcon />
                 </span>
               )}
-              <div className={`flow__stage${stage.mine ? ' flow__stage--mine' : ''}`}>
+              <div className={`flow__stage${stage.mine ? ' flow__stage--mine' : ''}`} role="listitem">
                 <p className="flow__who">{stage.who}</p>
                 <ul className="flow__steps">
                   {stage.steps.map((step) => (

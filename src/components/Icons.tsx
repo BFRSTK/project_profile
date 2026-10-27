@@ -1,4 +1,4 @@
-import type React from 'react'
+import type { ReactNode } from 'react'
 
 export function ArrowIcon() {
   return (
@@ -17,7 +17,7 @@ export function MailIcon() {
   )
 }
 
-const ICON_PATHS: Record<string, React.ReactNode> = {
+const ICON_PATHS: Record<string, ReactNode> = {
   cicd: (
     <>
       <circle cx="4" cy="4.5" r="2" />

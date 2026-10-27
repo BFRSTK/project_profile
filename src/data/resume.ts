@@ -238,7 +238,7 @@ export const resume: ResumeData = {
       },
     ],
   },
-  personalTools: ['C/C++', 'Ruby', 'Django', 'Rails'],
+  personalTools: ['C/C++', 'Ruby', 'Django', 'Rails', 'Claude', 'GitHub Actions'],
   skills: [
     {
       category: 'Languages',
@@ -254,7 +254,7 @@ export const resume: ResumeData = {
     },
     {
       category: 'Tools',
-      items: ['Git', 'Jenkins', 'Harness', 'Cursor'],
+      items: ['Git', 'Jenkins', 'Harness', 'Cursor', 'Claude', 'GitHub Actions'],
     },
   ],
   experience: [

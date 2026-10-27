@@ -260,7 +260,7 @@ Each build shows a 320x132 line schematic of the mechanism it changed (pipeline 
 40px square, 8px radius, slate-surface fill, 1px hairline, holding a 20px signal-blue stroke icon (1.5px). Leads each build and AI practice beside its title.
 
 ### AI Workflow Diagram
-Three stages (drafts, I refine, the team receives) as surface-tone panels with 12px radius joined by muted arrows; the human stage alone takes the signal-blue border and wash. A dashed hairline-strong band beneath holds the background agents. Stacks vertically below 720px with arrows turned down. Practices follow in a two-column grid of hairline-topped entries with icon tiles.
+Three stages (drafts, I refine, the team receives) as surface-tone panels with 12px radius joined by muted arrows; the human stage alone takes the signal-blue border and wash. A dashed hairline-strong band beneath holds the background agents. Stacks vertically below 640px with arrows turned down. Practices follow in a two-column grid of hairline-topped entries with icon tiles.
 
 ## Do's and Don'ts
 
