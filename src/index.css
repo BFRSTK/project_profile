@@ -11,7 +11,10 @@
   --accent-soft: rgb(96 165 250 / 0.12);
   --button: #2563eb;
   --button-hover: #1d4ed8;
-  --status: #34d399;
+  --status: #5cc8d6;
+  /* Cyan proves: outcomes, proficiency, what shipped. Blue stays the interactive voice. */
+  --outcome: #5cc8d6;
+  --outcome-soft: rgb(92 200 214 / 0.13);
 
   --font: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono: 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -32,7 +35,9 @@
   --muted: #5b6678;
   --accent: #1d4ed8;
   --accent-soft: rgb(37 99 235 / 0.09);
-  --status: #059669;
+  --status: #0891b2;
+  --outcome: #0e7490;
+  --outcome-soft: rgb(8 145 178 / 0.1);
 
   color-scheme: light;
 }
@@ -150,6 +155,8 @@ button {
     --muted: #555;
     --accent: #000;
     --accent-soft: transparent;
+    --outcome: #000;
+    --outcome-soft: transparent;
   }
   .no-print {
     display: none !important;

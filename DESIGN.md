@@ -13,7 +13,11 @@ colors:
   signal-blue-wash: "rgb(96 165 250 / 0.12)"
   action-blue: "#2563eb"
   action-blue-deep: "#1d4ed8"
-  open-green: "#34d399"
+  open-cyan: "#5cc8d6"
+  outcome-cyan: "#5cc8d6"
+  outcome-cyan-wash: "rgb(92 200 214 / 0.13)"
+  outcome-cyan-light: "#0e7490"
+  outcome-cyan-wash-light: "rgb(8 145 178 / 0.1)"
   paper-ground: "#fbfcfd"
   paper-surface: "#f1f4f8"
   hairline-light: "#e2e7ee"
@@ -23,7 +27,7 @@ colors:
   muted-light: "#5b6678"
   signal-blue-light: "#1d4ed8"
   signal-blue-wash-light: "rgb(37 99 235 / 0.09)"
-  open-green-light: "#059669"
+  open-cyan-light: "#0891b2"
   on-action: "#ffffff"
 typography:
   display:
@@ -148,22 +152,23 @@ The benchmark is the polished developer portfolio category (brittanychiang.com, 
 
 **Key Characteristics:**
 - One sans family (Geist) for everything; Geist Mono only for dates and small numeric data.
-- One blue accent family: a light signal blue for links, active nav, meters and focus; a saturated action blue for filled buttons.
+- Two accent roles: blue acts (links, active nav, tool selection, focus, filled buttons); cyan proves (availability, rating meters, experience figures, the current role, what each build delivered).
 - Flat surfaces separated by hairlines; a single raised surface tone for chips, photo backing and hover fills.
 - Heading-left, content-right section grid that collapses to one column on narrow screens.
 - Dark by default, light theme as a token swap, print stylesheet that strips to black on white.
 
 ## Colors
 
-A cool slate neutral ramp carrying a single blue accent, with one green reserved for the availability signal.
+A cool slate neutral ramp carrying two accent roles: blue for everything interactive, cyan for outcomes and proof.
 
 ### Primary
 - **Signal Blue** (dark `signal-blue`, light `signal-blue-light`): links on hover, the active-nav underline, filled meter segments, the "Show all" inline action and the focus ring. The interactive voice of the page in text and line form.
 - **Action Blue** (`action-blue`, hover `action-blue-deep`): the fill of primary buttons and the skip link, with white text. Shared by both themes so the main call to action looks the same everywhere.
 - **Signal Blue Wash** (`signal-blue-wash` / `signal-blue-wash-light`): text selection background only.
 
-### Tertiary
-- **Open Green** (`open-green` / `open-green-light`): the 8px availability dot beside "Open to new roles". Nowhere else.
+### Secondary
+- **Outcome Cyan** (`--outcome`: dark `outcome-cyan`, light `outcome-cyan-light`; wash `--outcome-soft`): the "Open to new roles" pill text, hero experience figures, filled rating-meter dots, "Present" on the current role, What I've built icons, the delivered part of each schematic, and the final "team receives" stage of the AI workflow. Never on a control, link or focus state.
+- **Open Cyan** (`open-cyan` / `open-cyan-light`): the 8px availability dot inside the status pill.
 
 ### Neutral
 - **Slate Ground** (`slate-ground`; light `paper-ground`): page and sticky nav background. Also the `theme-color` meta.
@@ -175,7 +180,7 @@ A cool slate neutral ramp carrying a single blue accent, with one green reserved
 - **Muted** (`muted`; light `muted-light`): nav links at rest, dates, subheads, metadata, footer.
 
 ### Named Rules
-**The One Blue Rule.** Blue is the only hue that signals interaction. Signal blue for text and lines, action blue for fills. No second accent colour; green exists only as the status dot.
+**Blue Acts, Cyan Proves.** Blue is the only hue that signals interaction: signal blue for text and lines, action blue for fills. Cyan marks outcomes and evidence and is never clickable on its own. In schematics, blue draws the process and cyan the part delivered. No third accent hue.
 
 **The Paired Token Rule.** Every neutral and accent role has a dark and a light value and changes only through `[data-theme]`. Never hard-code a colour in a component; the one exception is white text on action blue.
 
@@ -245,7 +250,7 @@ Quiet, compact and solid.
 - **Theme toggle:** 34px square, 1px hairline-strong border, 8px radius, muted 16px sun/moon icon; hover to ink.
 
 ### Rating Meter (signature)
-Five 16 x 6px segments, 3px radius, 4px gap; filled segments signal blue, empty segments hairline-strong, always followed by a mono "n/5" value so the meter never carries meaning alone. Rows are hairline-divided.
+Five 16 x 6px segments, 3px radius, 4px gap; filled segments outcome cyan, empty segments hairline-strong, always followed by a mono "n/5" value so the meter never carries meaning alone. Rows are hairline-divided.
 
 ### Experience Role (signature)
 Mono date column left; role title, company line with muted location, then up to four bullets visible. Remaining bullets sit in a collapsed region that opens with a 320ms grid-row height ease, toggled by a signal-blue text action ("Show all N highlights" / "Show fewer"). Stack chips follow.
@@ -254,13 +259,13 @@ Mono date column left; role title, company line with muted location, then up to 
 Inherit colour with a 1px underline at 0.2em offset. Underlines rest in hairline-strong and turn signal blue with the text on hover (200ms). The contact email is the one oversized link: headline type with a 2px underline.
 
 ### Schematic Plates (What I've built)
-Each build shows a 320x132 line schematic of the mechanism it changed (pipeline stages, monolith to services, chart to cluster pods, shared library under services, AI-generated test runs, MVC in a browser frame). Plates use the photo frame: slate-surface fill, 1px hairline, 12px radius. Strokes are 1.25px: hairline-strong for context, signal blue (with signal-blue-wash fill) on the part delivered; 10.5px Geist labels in muted. Builds sit in a two-column grid (one column below 640px); a tool match lights the plate border signal blue.
+Each build shows a 320x132 line schematic of the mechanism it changed (pipeline stages, monolith to services, chart to cluster pods, shared library under services, AI-generated test runs, MVC in a browser frame). Plates use the photo frame: slate-surface fill, 1px hairline, 12px radius. Strokes are 1.25px: hairline-strong for context, signal blue for the process, outcome cyan (with its wash) on the part delivered; 11px Geist labels in muted. Builds sit in a two-column grid (one column below 640px); a tool match lights the plate border signal blue.
 
 ### Icon Tile
-40px square, 8px radius, slate-surface fill, 1px hairline, holding a 20px signal-blue stroke icon (1.5px). Leads each build and AI practice beside its title.
+40px square, 8px radius, slate-surface fill, 1px hairline, holding a 20px stroke icon (1.5px): outcome cyan for builds, signal blue for AI practices. Leads each build and AI practice beside its title.
 
 ### AI Workflow Diagram
-Three stages (drafts, I refine, the team receives) as surface-tone panels with 12px radius joined by muted arrows; the human stage alone takes the signal-blue border and wash. A dashed hairline-strong band beneath holds the background agents. Stacks vertically below 640px with arrows turned down. Practices follow in a two-column grid of hairline-topped entries with icon tiles.
+Three stages (drafts, I refine, the team receives) as surface-tone panels with 12px radius joined by muted arrows; the human stage takes the signal-blue border and wash, the final hand-off stage an outcome-cyan border and heading. A dashed hairline-strong band beneath holds the background agents. Stacks vertically below 640px with arrows turned down. Practices follow in a two-column grid of hairline-topped entries with icon tiles.
 
 ## Do's and Don'ts
 
@@ -273,7 +278,7 @@ Three stages (drafts, I refine, the team receives) as surface-tone panels with 1
 - **Do** pair any graphical indicator (meter, dot) with text that carries the same meaning.
 
 ### Don't:
-- **Don't** add a second accent hue; blue is the only interactive colour.
+- **Don't** add a third accent hue, or use cyan on links, buttons or focus; blue is the only interactive colour.
 - **Don't** use box-shadows, glows, gradients or glass blur for depth.
 - **Don't** put uppercase tracked labels or kickers above headings; section titles stand alone.
 - **Don't** wrap sections or rows in bordered cards; rows are hairline-divided, not boxed.

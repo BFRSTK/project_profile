@@ -18,7 +18,10 @@ export function AIWorkflow({ workflow }: { workflow: ResumeData['aiWorkflow'] })
                   <FlowArrowIcon />
                 </span>
               )}
-              <div className={`flow__stage${stage.mine ? ' flow__stage--mine' : ''}`} role="listitem">
+              <div
+                className={`flow__stage${stage.mine ? ' flow__stage--mine' : ''}${i === flow.length - 1 ? ' flow__stage--out' : ''}`}
+                role="listitem"
+              >
                 <p className="flow__who">{stage.who}</p>
                 <ul className="flow__steps">
                   {stage.steps.map((step) => (

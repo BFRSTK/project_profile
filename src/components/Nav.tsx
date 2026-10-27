@@ -6,7 +6,7 @@ type Theme = 'light' | 'dark'
 const LINKS = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
-  { id: 'built', label: 'Built' },
+  { id: 'built', label: 'Builds' },
   { id: 'ai', label: 'AI' },
   { id: 'experience', label: 'Experience' },
   { id: 'education', label: 'Education' },

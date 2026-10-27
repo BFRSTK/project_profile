@@ -16,7 +16,7 @@ function Role({ job }: { job: Job }) {
   return (
     <article className={`role${state}`} id={`exp-${job.code}`}>
       <p className="role__dates">
-        <time>{job.start}</time> – <time>{job.end}</time>
+        <time>{job.start}</time> – <time className={job.end === 'Present' ? 'role__now' : undefined}>{job.end}</time>
       </p>
       <div className="role__body">
         <h3 className="role__title">{job.role}</h3>
@@ -31,7 +31,7 @@ function Role({ job }: { job: Job }) {
         </ul>
         {rest.length > 0 && (
           <>
-            <div className={`role__more${expanded ? ' role__more--open' : ''}`} id={restId} {...(expanded ? {} : { inert: '' })}>
+            <div className={`role__more${expanded ? ' role__more--open' : ''}`} id={restId} inert={!expanded}>
               <ul className="role__bullets">
                 {rest.map((b, i) => (
                   <li key={i}>{b}</li>

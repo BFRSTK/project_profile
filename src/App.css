@@ -227,8 +227,12 @@
   align-items: center;
   gap: 8px;
   margin-left: 6px;
+  padding: 5px 12px 5px 10px;
+  border-radius: 999px;
+  background: var(--outcome-soft);
   font-size: 14px;
-  color: var(--muted);
+  font-weight: 500;
+  color: var(--outcome);
 }
 
 .hero__status-dot {
@@ -288,7 +292,7 @@
 
 .hero__facts strong {
   font-weight: 600;
-  color: var(--ink-2);
+  color: var(--outcome);
 }
 
 .nowrap {
@@ -564,7 +568,7 @@
 }
 
 .meter__seg--on {
-  background: var(--accent);
+  background: var(--outcome);
 }
 
 .toolkit__row {
@@ -632,6 +636,10 @@
 
 /* ---------- What I've built ---------- */
 
+.built .icon-tile {
+  color: var(--outcome);
+}
+
 .built {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -687,6 +695,23 @@
 
 .art__soft {
   fill: var(--accent-soft);
+}
+
+/* The part delivered reads cyan; the process that got it there stays blue. */
+.art__ok {
+  fill: none;
+  stroke: var(--outcome);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.art__ok-soft {
+  fill: var(--outcome-soft);
+}
+
+.art__text--ok {
+  fill: var(--outcome);
 }
 
 .art__text {
@@ -777,6 +802,18 @@
 .flow__stage--mine {
   background: var(--accent-soft);
   border-color: var(--accent);
+}
+
+.flow__stage--out {
+  border-color: color-mix(in srgb, var(--outcome) 45%, var(--border));
+}
+
+.flow__stage--out .flow__who {
+  color: var(--outcome);
+}
+
+.flow__stage--out .flow__steps li::before {
+  background: var(--outcome);
 }
 
 .flow__who {
@@ -948,6 +985,10 @@
 .role:last-child {
   border-bottom: 0;
   padding-bottom: 0;
+}
+
+.role__now {
+  color: var(--outcome);
 }
 
 .role__dates {

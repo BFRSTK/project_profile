@@ -3,15 +3,24 @@ import type { BuiltItem } from '../data/resume'
 
 /**
  * Line schematics for "What I've built": each one draws the mechanism the
- * build changed, in hairline strokes with the accent on the part delivered.
+ * build changed: hairline context, blue for the process, cyan for the part delivered.
  */
 
-function Box({ x, y, w, h, label, accent }: { x: number; y: number; w: number; h: number; label?: string; accent?: boolean }) {
+type Tone = 'line' | 'acc' | 'ok'
+
+const TONE = {
+  line: { stroke: 'art__line', fill: 'art__ground', text: 'art__text' },
+  acc: { stroke: 'art__acc', fill: 'art__soft', text: 'art__text art__text--acc' },
+  ok: { stroke: 'art__ok', fill: 'art__ok-soft', text: 'art__text art__text--ok' },
+}
+
+function Box({ x, y, w, h, label, tone = 'line' }: { x: number; y: number; w: number; h: number; label?: string; tone?: Tone }) {
+  const t = TONE[tone]
   return (
-    <g className={accent ? 'art__acc' : 'art__line'}>
-      <rect x={x} y={y} width={w} height={h} rx="6" className={accent ? 'art__soft' : 'art__ground'} />
+    <g className={t.stroke}>
+      <rect x={x} y={y} width={w} height={h} rx="6" className={t.fill} />
       {label && (
-        <text x={x + w / 2} y={y + h / 2 + 3.5} textAnchor="middle" className={accent ? 'art__text art__text--acc' : 'art__text'}>
+        <text x={x + w / 2} y={y + h / 2 + 3.5} textAnchor="middle" className={t.text}>
           {label}
         </text>
       )}
@@ -30,7 +39,7 @@ const ARTS: Record<BuiltItem['icon'], ReactNode> = {
       <Box x={72} y={53} w={48} h={26} label="Build" />
       <Box x={128} y={53} w={48} h={26} label="Test" />
       <Box x={184} y={53} w={48} h={26} label="Scan" />
-      <Box x={240} y={53} w={60} h={26} label="Deploy" accent />
+      <Box x={240} y={53} w={60} h={26} label="Deploy" tone="ok" />
       <text x="20" y="122" className="art__text">Teams</text>
       <text x="300" y="122" textAnchor="end" className="art__text">One standard pipeline</text>
     </>
@@ -46,7 +55,7 @@ const ARTS: Record<BuiltItem['icon'], ReactNode> = {
       <text x="164" y="36" className="art__text">Cluster</text>
       {[0, 1, 2].map((c) =>
         [0, 1].map((r) => (
-          <rect key={`${c}${r}`} x={168 + c * 42} y={50 + r * 32} width="30" height="22" rx="4" className="art__acc art__soft" />
+          <rect key={`${c}${r}`} x={168 + c * 42} y={50 + r * 32} width="30" height="22" rx="4" className="art__ok art__ok-soft" />
         )),
       )}
     </>
@@ -65,9 +74,9 @@ const ARTS: Record<BuiltItem['icon'], ReactNode> = {
         [160, 96],
         [282, 100],
       ].map(([x, y]) => (
-        <circle key={`${x}-${y}`} cx={x} cy={y} r="8" className="art__acc art__ground" />
+        <circle key={`${x}-${y}`} cx={x} cy={y} r="8" className="art__ok art__ground" />
       ))}
-      <circle cx="222" cy="78" r="11" className="art__acc art__soft" />
+      <circle cx="222" cy="78" r="11" className="art__ok art__ok-soft" />
       <text x="222" y="126" textAnchor="middle" className="art__text">Services</text>
     </>
   ),
@@ -77,7 +86,7 @@ const ARTS: Record<BuiltItem['icon'], ReactNode> = {
       <Box x={122} y={26} w={76} h={30} label="Service" />
       <Box x={220} y={26} w={76} h={30} label="Service" />
       <path className="art__acc" d="M62 56v22M160 56v22M258 56v22" />
-      <Box x={24} y={78} w={272} h={32} label="Shared bootstrap library" accent />
+      <Box x={24} y={78} w={272} h={32} label="Shared bootstrap library" tone="ok" />
     </>
   ),
   testsuites: (
@@ -88,8 +97,8 @@ const ARTS: Record<BuiltItem['icon'], ReactNode> = {
       <path className="art__acc" d="M100 66h26M120 60l6 6-6 6" />
       {[24, 46, 68, 90, 112].map((y, i) => (
         <g key={y}>
-          <circle cx="150" cy={y} r="7" className="art__acc art__ground" />
-          <path className="art__acc" d={`m146.5 ${y}l2.5 2.5 4.5-4.5`} />
+          <circle cx="150" cy={y} r="7" className="art__ok art__ground" />
+          <path className="art__ok" d={`m146.5 ${y}l2.5 2.5 4.5-4.5`} />
           <path className="art__line" d={`M166 ${y}h${[110, 86, 124, 70, 98][i]}`} />
         </g>
       ))}
@@ -102,7 +111,7 @@ const ARTS: Record<BuiltItem['icon'], ReactNode> = {
       {[32, 42, 52].map((x) => (
         <circle key={x} cx={x} cy="21" r="2.5" className="art__line" />
       ))}
-      <Box x={128} y={42} w={64} h={26} label="View" accent />
+      <Box x={128} y={42} w={64} h={26} label="View" tone="ok" />
       <Box x={48} y={86} w={72} h={26} label="Model" />
       <Box x={200} y={86} w={80} h={26} label="Controller" />
       <path className="art__line" d="M120 99h80M150 68l-48 18M170 68l52 18" />
